@@ -18,4 +18,7 @@ Hari ini, Rabu 08 Oktober,2025 saya mempelajari:
   <li>Membuat styling untuk section#contact styling input dan texarea <li>
  <li>Membuat styling untuk section#contact styling tombol<li>
   <li>Membuat styling untuk section#contact styling warna tombol<li>
+   <li>Membuat styling untuk section#contact styling hover tombol<li>
+    <li>Membuat styling untuk section#contact styling label dan label>span<li>
+     <li>Membuat styling untuk section#contact styling input, textarea, button<li>
 </ol>
