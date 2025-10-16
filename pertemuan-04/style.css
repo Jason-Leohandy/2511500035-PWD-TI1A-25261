@@ -77,6 +77,17 @@ header li a {
         background-color: #cc04a1;
         transform: translateY(1px);
     }
+    header h1 {
+        margin: 0 0 8px;
+        font-size: 20px;
+        line-height: 1.2;
+    }
+    header ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        margin: 8px 0 0;
+    }
 
     #about p,
     #contact label {
@@ -150,7 +161,7 @@ header li a {
             top: 0;
             z-index: 1000;
         }
-        
+
         #about p,
         #contact label {
             flex-direction: column;
