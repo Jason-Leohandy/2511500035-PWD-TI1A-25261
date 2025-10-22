@@ -8,4 +8,5 @@ Hari ini, Rabu 22 Oktober 2025, saya mempelajari:
 <li>Copy index.html dan style.css folder pertemuan-04</li>
 <li>Tombol Hamburger</li>
 <li>class menu-toggle</li>
+<li>class menu-toggle mobile</li>
 </lo>
