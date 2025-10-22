@@ -6,4 +6,5 @@ Nama : Jason Leohandy<br>
 Hari ini, Rabu 22 Oktober 2025, saya mempelajari: 
 <ol>
 <li>Copy index.html dan style.css folder pertemuan-04</li>
+<li>Tombol Hamburger</li>
 </lo>
