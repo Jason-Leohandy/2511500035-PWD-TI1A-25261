@@ -10,7 +10,9 @@ document.querySelector("form").addEventListener("submit", function (e) {
     alert("Terima kasih, " + nama + "! Pesan Anda telah dikirim."); 
   } 
 });
-document.querySelector("form").addEventListener("submit", function (e) {
+function showError(inputElement, message) { 
+  const label = inputElement.closest("label"); 
+  if (!label) return; 
     const nama = document.getElementById("txtNama");
     const email = document.getElementById("txtEmail");
     const pesan = document.getElementById("txtPesan");
@@ -47,7 +49,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
   } else { 
     alert("Terima kasih, " + nama.value + "!\nPesan Anda telah dikirim."); 
   } 
-}); 
  
 function showError(inputElement, message) { 
   const label = inputElement.closest("label"); 
@@ -212,4 +213,4 @@ document.addEventListener("DOMContentLoaded", function () {
   setupCharCountLayout(); 
  
   window.addEventListener('resize', applyResponsiveLayout); 
-}); 
+}); }
