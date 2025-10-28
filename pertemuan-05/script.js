@@ -3,7 +3,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
   const email = document.getElementById("txtEmail").value.trim(); 
   const pesan = document.getElementById("txtPesan").value.trim(); 
  
-  if (nama === "" || email === "" || pesan === "") { 
+  if (Nama === "" || Email === "" || Pesan === "") { 
     alert("Semua kolom wajib diisi!"); 
     e.preventDefault(); 
   } else { 
