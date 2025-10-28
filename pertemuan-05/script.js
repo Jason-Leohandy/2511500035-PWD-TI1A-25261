@@ -162,7 +162,7 @@ function showError(inputElement, message) {
   label.style.flexWrap = "wrap"; 
  
   const small = document.createElement("small"); 
-  small.className = ".error-msg"; 
+  small.className = ".Error-msg"; 
   small.textContent = message; 
  
   small.style.color = "red"; 
