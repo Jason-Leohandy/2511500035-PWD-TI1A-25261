@@ -12,7 +12,14 @@ document.querySelector("form").addEventListener("submit", function (e) {
 }); 
 
 document.getElementById("menutoggle").addEventListener("click", function () {
-  document.querySelector("nav").classList.toggle("active");
+  const nav = document.querySelector("nav"); 
+  nav.classList.toggle("active"); 
+
+  if (nav.classList.contains("active")) { 
+    this.textContent = "\u2716"; 
+  } else { 
+    this.textContent = "\u2630"; 
+  }
 });
 
 document.querySelector("form").addEventListener("submit", function (e) {
@@ -61,7 +68,7 @@ function showError(inputElement, message) {
   label.style.flexWrap = "wrap"; 
  
   const small = document.createElement("small"); 
-  small.className = "error-msg"; 
+  small.className = ".error-msg"; 
   small.textContent = message; 
  
   small.style.color = "red"; 
