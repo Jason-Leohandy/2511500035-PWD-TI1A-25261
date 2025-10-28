@@ -3,13 +3,19 @@ document.querySelector("form").addEventListener("submit", function (e) {
   const email = document.getElementById("txtEmail").value.trim(); 
   const pesan = document.getElementById("txtPesan").value.trim(); 
  
-  if (Nama === "" || Email === "" || Pesan === "") { 
+  if (nama === "" || email === "" || pesan === "") { 
     alert("Semua kolom wajib diisi!"); 
     e.preventDefault(); 
   } else { 
     alert("Terima kasih, " + nama + "! Pesan Anda telah dikirim."); 
   } 
 }); 
+document.addEventListener("DOMContentLoaded", function () { 
+  const homeSection = document.getElementById("home"); 
+  const ucapan = document.createElement("p"); 
+  ucapan.textContent = "Halo! Selamat datang di halaman saya!"; 
+  homeSection.appendChild(ucapan); 
+});
 
 document.getElementById("menutoggle").addEventListener("click", function () {
   const nav = document.querySelector("nav"); 
@@ -121,7 +127,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     const email = document.getElementById("txtEmail")
     const pesan = document.getElementById("txtPesan")
 
-    document.querySelector(".Error-msg").forEach(el => el.remove());
+    document.querySelector("error-msg").forEach(el => el.remove());
     [nama, email, pesan ].forEach(el => el.style.border = "");
 
     let isValid = true;
@@ -162,7 +168,7 @@ function showError(inputElement, message) {
   label.style.flexWrap = "wrap"; 
  
   const small = document.createElement("small"); 
-  small.className = ".Error-msg"; 
+  small.className = "Error-msg"; 
   small.textContent = message; 
  
   small.style.color = "red"; 
@@ -203,10 +209,8 @@ function alignErrorMessage(smallEl, inputEl) {
 } 
  
 window.addEventListener("resize", () => { 
-  document.querySelectorAll(".Error-msg").forEach(small => { 
+  document.querySelectorAll("error-msg").forEach(small => { 
     const target = document.getElementById(small.dataset.forId); 
     if (target) alignErrorMessage(small, target); 
   }); 
 }); 
-
-       
