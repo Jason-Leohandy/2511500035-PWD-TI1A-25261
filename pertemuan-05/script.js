@@ -11,7 +11,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
   } 
 }); 
 
-document.getElementById("menuToggle").addEventListener("click", function () {
+document.getElementById("menutoggle").addEventListener("click", function () {
   document.querySelector("nav").classList.toggle("active");
 });
 
@@ -28,6 +28,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     if (nama.value.trim().length < 3) { 
     showError(nama, "Nama minimal 3 huruf dan tidak boleh kosong."); 
     isValid = false; 
+
   } else if (!/^[A-Za-z\s]+$/.test(nama.value)) { 
     showError(nama, "Nama hanya boleh berisi huruf dan spasi."); 
     isValid = false; 
