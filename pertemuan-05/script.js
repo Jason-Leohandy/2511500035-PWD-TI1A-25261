@@ -121,7 +121,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     const email = document.getElementById("txtEmail")
     const pesan = document.getElementById("txtPesan")
 
-    document.querySelector(".error-msg").forEach(el => el.remove());
+    document.querySelector(".Error-msg").forEach(el => el.remove());
     [nama, email, pesan ].forEach(el => el.style.border = "");
 
     let isValid = true;
@@ -203,7 +203,7 @@ function alignErrorMessage(smallEl, inputEl) {
 } 
  
 window.addEventListener("resize", () => { 
-  document.querySelectorAll(".error-msg").forEach(small => { 
+  document.querySelectorAll(".Error-msg").forEach(small => { 
     const target = document.getElementById(small.dataset.forId); 
     if (target) alignErrorMessage(small, target); 
   }); 
