@@ -182,7 +182,11 @@ function showError(inputElement, message) {
  
   alignErrorMessage(small, inputElement); 
 } 
- 
+function showError(inputElement, message) { 
+  const label = inputElement.closest("label"); 
+  if (!label) return; 
+}
+
 function alignErrorMessage(smallEl, inputEl) { 
   const isMobile = window.matchMedia("(max-width: 600px)").matches; 
   if (isMobile) { 
