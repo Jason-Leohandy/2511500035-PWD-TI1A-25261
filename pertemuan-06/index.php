@@ -41,9 +41,9 @@
             <h2>Tentang Saya</h2>
             <p><strong>NIM:</strong>2511500035
             <?php
-            echo = $nim;
+            echo $nim;
             ?>
-        </p>
+            </p>
             <p><strong>Nama Lengkap:</strong>Jason Leohandy &#128526;</p>
             <p><strong>Tempat Lahir:</strong>Pangkalpinang</p>
             <p><strong>Tanggal lahir:</strong>14 Juni 2007</p>
