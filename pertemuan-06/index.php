@@ -25,6 +25,9 @@
     <main>
         <section id="home">
             <h2>&hearts;Selamat datang&hearts;</h2>
+            <?php
+  echo "halo dunia!";
+?>
             <p>ini contoh paragraf HTML.</p>
         </section>
         <section id="about">
