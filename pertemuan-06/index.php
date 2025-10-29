@@ -36,15 +36,21 @@
             <?php
             $nim = "2511500035";
             $NIM = "2511500000";
+            $nama = "Jason Leohandy";
+            $Nama = "Suimiann";
             ?>
 
             <h2>Tentang Saya</h2>
-            <p><strong>NIM:</strong>2511500035
+            <p><strong>NIM:</strong>
             <?php
             echo $nim;
             ?>
             </p>
-            <p><strong>Nama Lengkap:</strong>Jason Leohandy &#128526;</p>
+            <p><strong>Nama Lengkap:</strong> &#128526;
+            <?php
+             echo $Nama
+            ?>
+        </p>
             <p><strong>Tempat Lahir:</strong>Pangkalpinang</p>
             <p><strong>Tanggal lahir:</strong>14 Juni 2007</p>
             <p><strong>Hobi:</strong>Basket,Billiard,Gaming,Bultang,dll</p>
