@@ -46,9 +46,9 @@
             echo $nim;
             ?>
             </p>
-            <p><strong>Nama Lengkap:</strong> 
+            <p><strong>Nama Lengkap:</strong> &#128526;
             <?php
-             echo $Nama &#128526;
+             echo $Nama
             ?>
         </p>
             <p><strong>Tempat Lahir:</strong>Pangkalpinang</p>
