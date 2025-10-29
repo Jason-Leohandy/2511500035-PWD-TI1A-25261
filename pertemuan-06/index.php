@@ -30,7 +30,7 @@
              ?>
              <?php
              echo "Nama saya Jason Leohandy"
-             ?>
+             /?>
             <p>ini contoh paragraf HTML.</p>
         </section>
         <section id="about">
