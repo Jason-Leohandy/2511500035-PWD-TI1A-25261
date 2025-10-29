@@ -1,13 +1,13 @@
 document.querySelector("form").addEventListener("submit", function (e) { 
-  const nama = document.getElementById("txtNama").value.trim(); 
-  const email = document.getElementById("txtEmail").value.trim(); 
-  const pesan = document.getElementById("txtPesan").value.trim(); 
+  const Nama = document.getElementById("txtNama").value.trim(); 
+  const Email = document.getElementById("txtEmail").value.trim(); 
+  const Pesan = document.getElementById("txtPesan").value.trim(); 
  
-  if (nama === "" || email === "" || pesan === "") { 
+  if (Nama === "" || Email === "" || Pesan === "") { 
     alert("Semua kolom wajib diisi!"); 
     e.preventDefault(); 
   } else { 
-    alert("Terima kasih, " + nama + "! Pesan Anda telah dikirim."); 
+    alert("Terima kasih, " + Nama + "! Pesan Anda telah dikirim."); 
   } 
 }); 
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const label = document.querySelector('label[for="txtPesan"]'); 
     if (!label) return; 
  
-    let wrapper = label.querySelector('[data-wrapper="pesan-wrapper"]'); 
+    let wrapper = label.querySelector('[data-wrapper="Pesan-wrapper"]'); 
     const span = label.querySelector('span'); 
     const textarea = document.getElementById('txtPesan'); 
     const counter = document.getElementById('charCount'); 
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
  
     if (!wrapper) { 
       wrapper = document.createElement('div'); 
-      wrapper.dataset.wrapper = 'pesan-wrapper'; 
+      wrapper.dataset.wrapper = 'Pesan-wrapper'; 
       wrapper.style.width = '100%'; 
       wrapper.style.flex = '1'; 
       wrapper.style.display = 'flex'; 
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function applyResponsiveLayout() { 
     const label = document.querySelector('label[for="txtPesan"]'); 
     const span = label?.querySelector('span'); 
-    const wrapper = label?.querySelector('[data-wrapper="pesan-wrapper"]'); 
+    const wrapper = label?.querySelector('[data-wrapper="Pesan-wrapper"]'); 
     const counter = document.getElementById('charCount'); 
     if (!label || !span || !wrapper || !counter) return; 
  
@@ -117,41 +117,41 @@ document.addEventListener("DOMContentLoaded", function () {
 }); 
 
 document.querySelector("form").addEventListener("submit", function (e) {
-    const nama = document.getElementById("txtNama");
-    const email = document.getElementById("txtEmail")
-    const pesan = document.getElementById("txtPesan")
+    const Nama = document.getElementById("txtNama");
+    const Email = document.getElementById("txtEmail")
+    const Pesan = document.getElementById("txtPesan")
 
     document.querySelector(".Error-msg").forEach(el => el.remove());
-    [nama, email, pesan ].forEach(el => el.style.border = "");
+    [Nama, Email, Pesan ].forEach(el => el.style.border = "");
 
     let isValid = true;
 
-    if (nama.value.trim().length < 3) { 
-    showError(nama, "Nama minimal 3 huruf dan tidak boleh kosong."); 
+    if (Nama.value.trim().length < 3) { 
+    showError(Nama, "Nama minimal 3 huruf dan tidak boleh kosong."); 
     isValid = false; 
 
-  } else if (!/^[A-Za-z\s]+$/.test(nama.value)) { 
-    showError(nama, "Nama hanya boleh berisi huruf dan spasi."); 
+  } else if (!/^[A-Za-z\s]+$/.test(Nama.value)) { 
+    showError(Nama, "Nama hanya boleh berisi huruf dan spasi."); 
     isValid = false; 
   } 
  
-  if (email.value.trim() === "") { 
-    showError(email, "Email wajib diisi."); 
+  if (Email.value.trim() === "") { 
+    showError(Email, "Email wajib diisi."); 
     isValid = false; 
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { 
-     showError(email, "Format email tidak valid. Contoh: nama@mail.com"); 
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Email.value)) { 
+     showError(Email, "Format Email tidak valid. Contoh: Nama@mail.com"); 
     isValid = false; 
   } 
  
-  if (pesan.value.trim().length < 10) { 
-    showError(pesan, "Pesan minimal 10 karakter agar lebih jelas."); 
+  if (Pesan.value.trim().length < 10) { 
+    showError(Pesan, "Pesan minimal 10 karakter agar lebih jelas."); 
     isValid = false; 
   } 
  
   if (!isValid) { 
     e.preventDefault(); 
   } else { 
-    alert("Terima kasih, " + nama.value + "!\nPesan Anda telah dikirim."); 
+    alert("Terima kasih, " + Nama.value + "!\nPesan Anda telah dikirim."); 
   } 
 }); 
  
