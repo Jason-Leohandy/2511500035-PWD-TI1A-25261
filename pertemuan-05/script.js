@@ -11,10 +11,10 @@ document.getElementById("menutoggle").addEventListener("click", function () {
 
 document.querySelector("form").addEventListener("submit", function (e) {
     const Nama = document.getElementById("txtNama");
-    const Email = document.getElementById("txtEmail")
-    const Pesan = document.getElementById("txtPesan")
+    const Email = document.getElementById("txtEmail");
+    const Pesan = document.getElementById("txtPesan");
 
-    document.querySelector(".Error-msg").forEach(el => el.remove());
+    document.querySelectorAll(".error-msg").forEach(el => el.remove());
     [Nama, Email, Pesan ].forEach(el => el.style.border = "");
 
     let isValid = true;
@@ -22,7 +22,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
     if (Nama.value.trim().length < 3) { 
     showError(Nama, "Nama minimal 3 huruf dan tidak boleh kosong."); 
     isValid = false; 
-
   } else if (!/^[A-Za-z\s]+$/.test(Nama.value)) { 
     showError(Nama, "Nama hanya boleh berisi huruf dan spasi."); 
     isValid = false; 
@@ -51,10 +50,13 @@ document.querySelector("form").addEventListener("submit", function (e) {
 function showError(inputElement, message) { 
   const label = inputElement.closest("label"); 
   if (!label) return; 
+
   label.style.flexWrap = "wrap"; 
+
   const small = document.createElement("small"); 
   small.className = "error-msg"; 
   small.textContent = message; 
+
   small.style.color = "red"; 
   small.style.fontSize = "14px"; 
   small.style.display = "block"; 
@@ -69,12 +71,9 @@ function showError(inputElement, message) {
   } 
  
   inputElement.style.border = "1px solid red"; 
+
   alignErrorMessage(small, inputElement); 
 } 
-function showError(inputElement, message) { 
-  const label = inputElement.closest("label"); 
-  if (!label) return; 
-}
 
 function alignErrorMessage(smallEl, inputEl) { 
   const isMobile = window.matchMedia("(max-width: 600px)").matches; 
@@ -96,16 +95,15 @@ function alignErrorMessage(smallEl, inputEl) {
 } 
  
 window.addEventListener("resize", () => { 
-  document.querySelectorAll(".Error-msg").forEach(small => { 
+  document.querySelectorAll(".error-msg").forEach(small => { 
     const target = document.getElementById(small.dataset.forId); 
     if (target) alignErrorMessage(small, target); 
   }); 
 }); 
 
-
 document.getElementById("txtPesan").addEventListener("input", function () { 
-  const panjang = this.value.length; 
-  document.getElementById("charCount").textContent = panjang + "/200 karakter"; 
+    const panjang = this.value.length; 
+    document.getElementById("charCount").textContent = panjang + "/200 karakter"; 
 }); 
 
 document.addEventListener("DOMContentLoaded", function () { 
@@ -114,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ucapan.textContent = "Halo! Selamat datang di halaman saya!"; 
   homeSection.appendChild(ucapan); 
 
-   function setupCharCountLayout() { 
+ function setupCharCountLayout() { 
     const label = document.querySelector('label[for="txtPesan"]'); 
     if (!label) return; 
  
@@ -145,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
  
     applyResponsiveLayout();  
   } 
+  
  
   function applyResponsiveLayout() { 
     const label = document.querySelector('label[for="txtPesan"]'); 
