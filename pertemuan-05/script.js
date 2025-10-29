@@ -23,20 +23,20 @@ document.getElementById("menutoggle").addEventListener("click", function () {
 });
 
 document.querySelector("form").addEventListener("submit", function (e) {
-    const Nama = document.getElementById("txtNama");
+    const nama = document.getElementById("txtNama");
     const Email = document.getElementById("txtEmail");
     const Pesan = document.getElementById("txtPesan");
 
     document.querySelectorAll(".error-msg").forEach(el => el.remove());
-    [Nama, Email, Pesan ].forEach(el => el.style.border = "");
+    [nama, Email, Pesan ].forEach(el => el.style.border = "");
 
     let isValid = true;
 
-    if (Nama.value.trim().length < 3) { 
-    showError(Nama, "Nama minimal 3 huruf dan tidak boleh kosong."); 
+    if (nama.value.trim().length < 3) { 
+    showError(nama, "nama minimal 3 huruf dan tidak boleh kosong."); 
     isValid = false; 
-  } else if (!/^[A-Za-z\s]+$/.test(Nama.value)) { 
-    showError(Nama, "Nama hanya boleh berisi huruf dan spasi."); 
+  } else if (!/^[A-Za-z\s]+$/.test(nama.value)) { 
+    showError(nama, "nama hanya boleh berisi huruf dan spasi."); 
     isValid = false; 
   } 
  
@@ -44,7 +44,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     showError(Email, "Email wajib diisi."); 
     isValid = false; 
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Email.value)) { 
-     showError(Email, "Format Email tidak valid. Contoh: Nama@mail.com"); 
+     showError(Email, "Format Email tidak valid. Contoh: nama@mail.com"); 
     isValid = false; 
   } 
  
@@ -56,7 +56,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
   if (!isValid) { 
     e.preventDefault(); 
   } else { 
-    alert("Terima kasih, " + Nama.value + "!\nPesan Anda telah dikirim."); 
+    alert("Terima kasih, " + nama.value + "!\nPesan Anda telah dikirim."); 
   } 
 }); 
  
