@@ -158,13 +158,10 @@ document.querySelector("form").addEventListener("submit", function (e) {
 function showError(inputElement, message) { 
   const label = inputElement.closest("label"); 
   if (!label) return; 
- 
   label.style.flexWrap = "wrap"; 
- 
   const small = document.createElement("small"); 
-  small.className = ".Error-msg"; 
+  small.className = "error-msg"; 
   small.textContent = message; 
- 
   small.style.color = "red"; 
   small.style.fontSize = "14px"; 
   small.style.display = "block"; 
@@ -179,7 +176,6 @@ function showError(inputElement, message) {
   } 
  
   inputElement.style.border = "1px solid red"; 
- 
   alignErrorMessage(small, inputElement); 
 } 
 function showError(inputElement, message) { 
