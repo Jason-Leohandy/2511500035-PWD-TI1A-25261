@@ -1,15 +1,3 @@
-document.querySelector("form").addEventListener("submit", function (e) { 
-  const Nama = document.getElementById("txtNama").value.trim(); 
-  const Email = document.getElementById("txtEmail").value.trim(); 
-  const Pesan = document.getElementById("txtPesan").value.trim(); 
- 
-  if (Nama === "" || Email === "" || Pesan === "") { 
-    alert("Semua kolom wajib diisi!"); 
-    e.preventDefault(); 
-  } else { 
-    alert("Terima kasih, " + Nama + "! Pesan Anda telah dikirim."); 
-  } 
-}); 
 
 document.getElementById("menutoggle").addEventListener("click", function () {
   const nav = document.querySelector("nav"); 
