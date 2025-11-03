@@ -151,7 +151,7 @@ for ($i = 0; $i < count($namaMatkul); $i++) {
     if ($hadir[$i] < 70) {
         $grade = "E";
         $mutu = 0.00;
-    } elseif ($nilaiAkhir >= 85) {
+    } elseif ($nilaiAkhir >= 55) {
         $grade = "A";
         $mutu = 4.00;
     } elseif ($nilaiAkhir >= 80) {
