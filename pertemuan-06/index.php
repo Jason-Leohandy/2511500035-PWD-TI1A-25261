@@ -74,10 +74,11 @@
             echo $Hobi;
             ?>
         </p>
-            <p><strong>Pasangan:</strong>&hearts;
+            <p><strong>Pasangan:</strong>
             <?php
             echo $Pasangan;
             ?> 
+            &hearts;
         </p>
             <p><strong>Pekerjaan:</strong>
             <?php
