@@ -40,7 +40,7 @@
             $Tempatlahir ="Pangkalpinang";
             $Tanggallahir ="14 Juni 2007";
             $Hobi = "Basket,Billiard,Gaming,Bultang,Dll";
-            $Pasangan = "Sudah ada"&hearts ; 
+            $Pasangan = "Sudah ada" ; 
             $Pekerjaan = "Mahasiswa";
             $NamaOrtu = "Ngit Hen Dan Suraidah";
             $NamaAdik = "Justin Leorentino";
@@ -74,7 +74,7 @@
             echo $Hobi;
             ?>
         </p>
-            <p><strong>Pasangan:</strong>
+            <p><strong>Pasangan:</strong>&hearts;
             <?php
             echo $Pasangan;
             ?> 
