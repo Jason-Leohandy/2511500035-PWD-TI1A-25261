@@ -55,7 +55,7 @@
             </p>
             <p><strong>Nama Lengkap:</strong> 
             <?php
-             echo $Nama;
+             echo $nama;
             ?>
             &#128526;
         </p>
