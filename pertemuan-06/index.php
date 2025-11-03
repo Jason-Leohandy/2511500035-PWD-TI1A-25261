@@ -151,7 +151,7 @@ for ($i = 0; $i < count($namaMatkul); $i++) {
     if ($hadir[$i] < 70) {
         $grade = "E";
         $mutu = 0.00;
-    } elseif ($nilaiAkhir >= 85) {
+    } elseif ($nilaiAkhir >= 55) {
         $grade = "A";
         $mutu = 4.00;
     } elseif ($nilaiAkhir >= 80) {
@@ -221,7 +221,6 @@ echo "<h3>Total SKS = $totalSKS</h3>";
 echo "<h3>IPK = " . number_format($IPK, 2) . "</h3>";
 echo "</section>";
 ?>
-           ?>
        </section>
 
        <h2>
