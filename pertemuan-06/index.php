@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,6 +37,14 @@
             $NIM = "2511500000";
             $nama = "Jason Leohandy";
             $Nama = "Suimiann";
+            $Tempatlahir ="Pangkalpinang";
+            $Tanggallahir ="14 Juni 2007";
+            $Hobi = "Basket,Billiard,Gaming,Bultang,Dll";
+            $Pasangan = "Sudah ada &hearts"; 
+            $Pekerjaan = "Mahasiswa";
+            $NamaOrtu = "Ngit Hen Dan Suraidah";
+            $NamaAdik = "Justin Leorentino";
+            $Motto = "Teruslah Bernafas";
             ?>
 
             <h2>Tentang Saya</h2>
@@ -48,17 +55,50 @@
             </p>
             <p><strong>Nama Lengkap:</strong> &#128526;
             <?php
-             echo $Nama
+             echo $Nama;
             ?>
         </p>
-            <p><strong>Tempat Lahir:</strong>Pangkalpinang</p>
-            <p><strong>Tanggal lahir:</strong>14 Juni 2007</p>
-            <p><strong>Hobi:</strong>Basket,Billiard,Gaming,Bultang,dll</p>
-            <p><strong>Pasangan:</strong>sudah ada &hearts;</p>
-            <p><strong>Pekerjaan:</strong>Mahasiswa</p>
-            <p><strong>Nama Orang Tua:</strong>Suraidah & Ngit Hen</p>
-            <p><strong>Nama Adik:</strong>Justin Leorentino</p>
-            <p><strong>Motto Hidup:</strong>Teruslah Bernafas</p>
+            <p><strong>Tempat Lahir:</strong>
+            <?php
+            echo $Tempatlahir;
+            ?>
+        </p>
+
+            <p><strong>Tanggal lahir:</strong>
+            <?php
+            echo $Tanggallahir;
+            ?>
+        </p>
+            <p><strong>Hobi:</strong>
+            <?php
+            echo $Hobi;
+            ?>
+        </p>
+            <p><strong>Pasangan:</strong>
+            <?php
+            echo $Pasangan;
+            ?> 
+        </p>
+            <p><strong>Pekerjaan:</strong>
+            <?php
+            echo $Pekerjaan;
+            ?>
+        </p>
+            <p><strong>Nama Orang Tua:</strong>
+            <?php
+            echo $NamaOrtu;
+            ?>
+        </p>
+            <p><strong>Nama Adik:</strong>
+            <?php
+            echo $NamaAdik;
+            ?>        
+        </p>
+            <p><strong>Motto Hidup:</strong>
+            <?php
+            echo $Motto;
+            ?>
+        </p>
         </section>
         <section id="contact">
             <h2>Kontak kami</h2>
@@ -77,11 +117,18 @@
                 <button type="reset">Batal</button>
             </form>
         </section>
+
+
+        <section id="ipk">
+            
+
+
+       </section>
     </main>
     <footer>
         <p>&copy;2025 Jason Leohandy Nim [2511500035]</p>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </hmtl>
