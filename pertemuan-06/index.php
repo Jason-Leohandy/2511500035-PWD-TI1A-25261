@@ -40,7 +40,7 @@
             $Tempatlahir ="Pangkalpinang";
             $Tanggallahir ="14 Juni 2007";
             $Hobi = "Basket,Billiard,Gaming,Bultang,Dll";
-            $Pasangan = "Sudah ada" &hearts;; 
+            $Pasangan = "Sudah ada"&hearts ; 
             $Pekerjaan = "Mahasiswa";
             $NamaOrtu = "Ngit Hen Dan Suraidah";
             $NamaAdik = "Justin Leorentino";
