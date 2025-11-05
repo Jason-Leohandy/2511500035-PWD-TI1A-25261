@@ -1,8 +1,3 @@
-<?php
-echo $_GET["txtnama"];
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
