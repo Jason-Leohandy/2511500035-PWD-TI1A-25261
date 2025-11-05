@@ -6,10 +6,9 @@ if(isset($_SESSION["nama"])):
 endif;
 $sesemail = "";
 
-if (isset ($_SESSION["email"])) :
+if(isset ($_SESSION["email"])) :
   $sesemail = $_SESSION ["email"];
 endif;
-
 $sespesan = "";
 if (isset ($_SESSION["pesan"])) :
   $sesemail = $_SESSION ["pesan"];
