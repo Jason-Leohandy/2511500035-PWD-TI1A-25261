@@ -125,10 +125,10 @@
      <?php
 
 $namaMatkul = ["Kalkulus", "Logika Informatika", "Konsep Basis Data", "Wawasan Berbudi Luhur", "Pemrograman Web Dasar"];
-$sks        = [4, 2, 3, 3, 3];
-$hadir      = [90, 70, 80, 75, 69];
-$tugas      = [60, 50, 70, 80, 80];
-$uts        = [80, 60, 75, 85, 90];
+$sks        = [4, 4, 4, 3, 4];
+$hadir      = [90, 70, 80, 75, 80];
+$tugas      = [60, 100, 70, 80, 80];
+$uts        = [80, 80, 75, 85, 90];
 $uas        = [70, 80, 70, 90, 100];
 
 $totalBobot = 0;
