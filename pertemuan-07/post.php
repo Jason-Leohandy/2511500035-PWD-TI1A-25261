@@ -4,9 +4,9 @@ $sesname = "";
 if(isset($_SESSION["nama"])):
   $sesname = $_SESSION ["nama"];
 endif;
-$sesemail = "";
 
-if(isset ($_SESSION["email"])) :
+$sesemail = "";
+if(isset($_SESSION["email"])) :
   $sesemail = $_SESSION ["email"];
 endif;
 $sespesan = "";
@@ -98,6 +98,10 @@ endif;
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
+      <?php if (!empty($sesname));
+            if (!empty($sesemail));
+            if (!empty($sespesan));
+        ?>
       <p>terimakasih sudah menghubungi kami :
         <label>Nama : <strong><?php echo $sesname; ?></strong></label>
         <label>Email : <strong><?php echo $sesemail; ?></strong></label>
