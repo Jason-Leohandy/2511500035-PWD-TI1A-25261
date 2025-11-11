@@ -4,9 +4,8 @@ $sesname = "";
 if(isset($_SESSION["nama"])):
   $sesname = $_SESSION ["nama"];
 endif;
-
 $sesemail = "";
-if(isset($_SESSION["email"])) :
+if(isset($_SESSION["email"])):
   $sesemail = $_SESSION ["email"];
 endif;
 $sespesan = "";
@@ -81,7 +80,7 @@ endif;
       <h2>Kontak Kami</h2>
       <form action="post_proses.php" method="POST">
 
-        <label for="txtNama"><span>Nama:</span>
+        <label for="txtNama"><spa n>Nama:</span>
           <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
         </label>
 
