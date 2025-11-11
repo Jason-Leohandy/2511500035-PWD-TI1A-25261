@@ -11,7 +11,7 @@ if(isset($_SESSION["email"])):
 endif;
 $sespesan = "";
 if (isset ($_SESSION["pesan"])) :
-  $sesemail = $_SESSION ["pesan"];
+  $sespesan = $_SESSION ["pesan"];
 endif;
 ?>
 <!DOCTYPE html>
