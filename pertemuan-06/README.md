@@ -13,4 +13,6 @@ Hari ini, Rabu 29 Oktober 2025, saya mempelajari:
  <li>memindahkan section#IPK di posisi yang diinginkan</li>
  <li>buat skrip menghitung nilai akhir 1 sampai 5</li>
  <li>kondisi kehadiran dibawah 70 = E</li>
+ <li>buat kondisi status berdasarkan grade</li>
+ <li>hitung bobot 1 sampai 5</li>
 </lo>
