@@ -122,174 +122,93 @@
 
 
         <section id="ipk">
-          
-     <?php
+          <?php
+ $namaMatkul = ["Algoritma dan Struktur data", "Agama", "Konsep Basis Data", "Wawasan Berbudi Luhur", "Pemrograman Web Dasar"];
+$sks        = [4, 4, 4, 3, 4];
+$hadir      = [90, 70, 80, 75, 80];
+$tugas      = [60, 100, 70, 80, 80];
+$uts        = [80, 80, 75, 85, 90];
+$uas        = [70, 80, 70, 90, 100];
 
-$namaMatkul1= "Algoritma dan Struktur data";
-$namaMatkul2= ""; 
-$namaMatkul3= ""; 
-$namaMatkul4= ""; 
-$namaMatkul5= "";
-$sksMatkul1= ""; 
-$sksMatkul2= ""; 
-$sksMatkul3= ""; 
-$sksMatkul4= ""; 
-$sksMatkul5 ="";
-$nilaiHadir1= ""; 
-$nilaiHadir2= "";
-$nilaiHadir3= "";
- $nilaiHadir4= ""; 
- $nilaiHadir5="";
-$nilaiTugas1= "";
- $nilaiTugas2= ""; 
- $nilaiTugas3= "";
-  $nilaiTugas4= ""; 
-  $nilaiTugas5 ="";
-$nilaiUTS1= ""; 
-$nilaiUTS2= ""; 
-$nilaiUTS3= ""; 
-$nilaiUTS4= "";
- $nilaiUTS5 ="";
-$nilaiUAS1= ""; 
-$nilaiUAS2= ""; 
-$nilaiUAS3= ""; 
-$nilaiUAS4= ""; 
-$nilaiUAS5= "";
-#Nilai Akhir = (0.1 * nilaiHadir) + (0.2 * nilaiTugas) + (0.3 * nilaiUTS) + (0.4 * nilaiUAS) 
-$nilaiAkhir1= (0.1 * $nilaiHadir1) + (0.2 * $nilaiTugas1) + (0.3 * $nilaiUTS1) + (0.4 * $nilaiUAS1);   
-$nilaiAkhir2=  (0.1 * $nilaiHadir2) + (0.2 * $nilaiTugas2) + (0.3 * $nilaiUTS2) + (0.4 * $nilaiUAS2); 
-$nilaiAkhir3= (0.1 * $nilaiHadir3) + (0.2 * $nilaiTugas3) + (0.3 * $nilaiUTS3) + (0.4 * $nilaiUAS3); 
- $nilaiAkhir4= (0.1 * $nilaiHadir4) + (0.2 * $nilaiTugas4) + (0.3 * $nilaiUTS4) + (0.4 * $nilaiUAS4); 
- $nilaiAkhir5 = (0.1 * $nilaiHadir5) + (0.2 * $nilaiTugas5) + (0.3 * $nilaiUTS5) + (0.4 * $nilaiUAS5); 
+$totalBobot = 0;
+$totalSKS   = 0;
 
-#Nilai kehadiran < 70, otomatis Grade = E. 
-if ($nilaihadir1 < 70) :
-$grade1 = "E";
-endif;
-if ($nilaihadir2 < 70) :
-$grade1 = "E";
-endif;
-if ($nilaiHadir3 < 70) :
-$grade1 = "E";
-endif;
-if ($nilaihadir4 < 70) :
-$grade1 = "E";
-endif;
-if ($nilaihadir5 < 70) :
-$grade1 = "E";
-endif;
-if ($nilaiAkhir1>=91) && ($nilaiAkhir1=<100) :
-  $grade1= "A" ;
-  $mutu1= 4;
-elseif ($nilaiAkhir2>=81) && ($nilaiAkhir2=<90) :
-  $grade2= "A-" ;
-  $mutu2= 3.7;
-endif;
+echo "<section id='ipk'>";
+echo "<h2>Nilai Saya</h2>";
+
+for ($i = 0; $i < count($namaMatkul); $i++) {
+
+    $nilaiAkhir = (0.1 * $hadir[$i]) + (0.2 * $tugas[$i]) + (0.3 * $uts[$i]) + (0.4 * $uas[$i]);
+
+    if ($hadir[$i] < 70) {
+        $grade = "E";
+        $mutu = 0.00;
+    } elseif ($nilaiAkhir >= 90) {
+        $grade = "A";
+        $mutu = 4.00;
+    } elseif ($nilaiAkhir >= 80) {
+        $grade = "A-";
+        $mutu = 3.70;
+    } elseif ($nilaiAkhir >= 75) {
+        $grade = "B+";
+        $mutu = 3.30;
+    } elseif ($nilaiAkhir >= 70) {
+        $grade = "B";
+        $mutu = 3.00;
+    } elseif ($nilaiAkhir >= 65) {
+        $grade = "B-";
+        $mutu = 2.70;
+    } elseif ($nilaiAkhir >= 60) {
+        $grade = "C+";
+        $mutu = 2.30;
+    } elseif ($nilaiAkhir >= 55) {
+        $grade = "C";
+        $mutu = 2.00;
+    } elseif ($nilaiAkhir >= 50) {
+        $grade = "C-";
+        $mutu = 1.70;
+    } elseif ($nilaiAkhir >= 35) {
+        $grade = "D";
+        $mutu = 1.00;
+    } else {
+        $grade = "E";
+        $mutu = 0.00;
+    }
+
+    $status = in_array($grade, ["A", "A-", "B+", "B", "B-", "C+", "C", "C-"]) ? "LULUS" : "GAGAL";
+
+    $bobot = $mutu * $sks[$i];
+    $totalBobot += $bobot;
+    $totalSKS += $sks[$i];
+
+    echo "<h3>Nama Mata Kuliah ke-" . ($i + 1) . ": {$namaMatkul[$i]}</h3>";
+    echo "SKS: {$sks[$i]}<br>";
+    echo "Kehadiran: {$hadir[$i]}<br>";
+    echo "Tugas: {$tugas[$i]}<br>";
+    echo "UTS: {$uts[$i]}<br>";
+    echo "UAS: {$uas[$i]}<br>";
+    echo "Nilai Akhir: " . number_format($nilaiAkhir, 2) . "<br>";
+    echo "Grade: $grade<br>";
+    echo "Angka Mutu: " . number_format($mutu, 2) . "<br>";
+    echo "Bobot: " . number_format($bobot, 2) . "<br>";
+    echo "Status: $status<br><hr>";
+}
 
 
-$mutu2= "";   
-$mutu3= "";
-$mutu4= "";
- $mutu5 = "";
- $grade1= ""; 
-$grade2= ""; 
-$grade3= ""; 
-$grade4= ""; 
-$grade5 = "";
-  #Bobot = angkaMutu * sksMatkul 
-$bobot1=  $mutu1 * $sksMatkul1;
- $bobot2=   $mutu2 * $sksMatkul2;
- $bobot3=  $mutu3 * $sksMatkul3;
- $bobot4=  $mutu4 * $sksMatkul4;
- $bobot5 =  $mutu5 * $sksMatkul5;
- /*
-Grade A, A-, B+, B, B-, C+, C, C- maka Status: LULUS 
-Grade D, E maka Status: GAGAL
- */
-switch ($grade1) :
-    case "A": $status1 = "LULUS"; break;
-    case "A-": $status1 = "LULUS"; break;
-    case "B+": $status1 = "LULUS"; break;
-    case "B": $status1 = "LULUS"; break;
-    case "B-": $status1 = "LULUS"; break;
-    case "C+": $status1 = "LULUS"; break;
-    case "C": $status1 = "LULUS"; break;
-    case "C+": $status1 = "LULUS"; break;
-    case "C-": $status1 = "LULUS"; break;
-    case "D": $status1 = "GAGAL"; break;
-    case "E": $status1 = " GAGAL"; break;
-     "A, A-, B+, B, B-, C+, C, C-"
-endswitch;
-$status1= ""; 
-switch ($grade2) :
-    case "A": $status2 = "LULUS"; break;
-    case "A-": $status2 = "LULUS"; break;
-    case "B+": $status2 = "LULUS"; break;
-    case "B": $status2 = "LULUS"; break;
-    case "B-": $status2 = "LULUS"; break;
-    case "C+": $status2 = "LULUS"; break;
-    case "C": $status2 = "LULUS"; break;
-    case "C+": $status2 = "LULUS"; break;
-    case "C-": $status2 = "LULUS"; break;
-    case "D": $status2 = "GAGAL"; break;
-    case "E": $status2 = " GAGAL"; break;
-     "A, A-, B+, B, B-, C+, C, C-"
-endswitch;
-$status2= ""; 
-switch ($grade3) :
-    case "A": $status3 = "LULUS"; break;
-    case "A-": $status3 = "LULUS"; break;
-    case "B+": $status3 = "LULUS"; break;
-    case "B": $status3 = "LULUS"; break;
-    case "B-": $status3 = "LULUS"; break;
-    case "C+": $status3 = "LULUS"; break;
-    case "C": $status3 = "LULUS"; break;
-    case "C+": $status3 = "LULUS"; break;
-    case "C-": $status3 = "LULUS"; break;
-    case "D": $status3 = "GAGAL"; break;
-    case "E": $status3 = " GAGAL"; break;
-     "A, A-, B+, B, B-, C+, C, C-"
-endswitch;
-$status3= ""; 
-switch ($grade4) :
-    case "A": $status4 = "LULUS"; break;
-    case "A-": $status4 = "LULUS"; break;
-    case "B+": $status4 = "LULUS"; break;
-    case "B": $status4 = "LULUS"; break;
-    case "B-": $status4 = "LULUS"; break;
-    case "C+": $status4 = "LULUS"; break;
-    case "C": $status4 = "LULUS"; break;
-    case "C+": $status4 = "LULUS"; break;
-    case "C-": $status4 = "LULUS"; break;
-    case "D": $status4 = "GAGAL"; break;
-    case "E": $status4 = " GAGAL"; break;
-     "A, A-, B+, B, B-, C+, C, C-"
-endswitch;
-$status4= "";
-switch ($grade5) :
-    case "A": $status5 = "LULUS"; break;
-    case "A-": $status5 = "LULUS"; break;
-    case "B+": $status5 = "LULUS"; break;
-    case "B": $status5 = "LULUS"; break;
-    case "B-": $status5 = "LULUS"; break;
-    case "C+": $status5 = "LULUS"; break;
-    case "C": $status5 = "LULUS"; break;
-    case "C+": $status5 = "LULUS"; break;
-    case "C-": $status5 = "LULUS"; break;
-    case "D": $status5 = "GAGAL"; break;
-    case "E": $status5 = " GAGAL"; break;
-     "A, A-, B+, B, B-, C+, C, C-"
-endswitch;
- $status5 = "";
-$totalBobot = $bobot1 +  $bobot2 +  $bobot3 +  $bobot4 +  $bobot5;
-$totalSKS = $ $sksMatkul1 + $sksMatkul2 + $sksMatkul3 + $sksMatkul4 + $sksMatkul5;
-$totalbobot = $bobot1 + $bobot2 + $bobot3 + $bobot4 + $bobot5;
-#IPK = totalBobot / totalSKS 
-$IPK = $totalbobot / $totalSKS;
+$IPK = $totalBobot / $totalSKS;
+
+echo "<h3>Total Bobot = " . number_format($totalBobot, 2) . "</h3>";
+echo "<h3>Total SKS = $totalSKS</h3>";
+echo "<h3>IPK = " . number_format($IPK, 2) . "</h3>";
+echo "</section>";
 ?>
-  <h2>Nilai saya<h2>
-     <p><strong>Nama Matakuliah ke-1:</strong>
-            <?php
-            echo $namaMatkul1;
-            ?>
-            </p>
+       </section>
+
+    </main>
+    <footer>
+        <p>&copy;2025 Jason Leohandy Nim [2511500035]</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</hmtl>
