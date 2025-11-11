@@ -15,4 +15,5 @@ Hari ini, Rabu 29 Oktober 2025, saya mempelajari:
  <li>kondisi kehadiran dibawah 70 = E</li>
  <li>buat kondisi status berdasarkan grade</li>
  <li>hitung bobot 1 sampai 5</li>
+ <li>hitung total bobot dan sks</li>
 </lo>
