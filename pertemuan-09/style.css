@@ -93,7 +93,8 @@ header li a:active {
 
 #about p,
 #form_about label,
-#contact label {
+#contact label,
+#Handling_form{
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
@@ -119,7 +120,8 @@ header li a:active {
 
 #contact input,
 #form_about input,
-#contact textarea {
+#contact textarea,
+#Handling_form input{
     flex: 1;
     border: none;
     border-radius: 40px;
@@ -131,7 +133,8 @@ header li a:active {
 }
 
 #contact button,
-#form_about button {
+#form_about button,
+#Handling_form button{
     margin-top: 20px;
     display: inline-block;
     padding: 10px 24px;
@@ -144,7 +147,8 @@ header li a:active {
 }
 
 #contact button[type="submit"],
-#form_about button[type="submit"] {
+#form_about button[type="submit"],
+#Handling_form button[type="submit"] {
     background-color: #0a0efc;
     color: white;
     font-weight: 600;
@@ -152,7 +156,8 @@ header li a:active {
 }
 
 #contact button[type="reset"],
-#form_about button[type="reset"] {
+#form_about button[type="reset"],
+#Handling_form button[type="reset"] {
     background-color: #fb0606;
     color: white;
     font-weight: 600;
@@ -160,13 +165,15 @@ header li a:active {
 }
 
 #contact button[type="submit"]:hover,
-#form_about button[type="submit"]:hover {
+#form_about button[type="submit"]:hover,
+#Handling_form[type="submit"] {
     background-color: #0388ee;
     transform: translateY(1px);
 }
 
 #contact button[type="reset"]:hover,
-#form_about button[type="reset"]:hover {
+#form_about button[type="reset"]:hover,
+#handling_form button[type="reset"]:hover, {
     background-color: #ff3902;
     transform: translatey(1px);
 }
