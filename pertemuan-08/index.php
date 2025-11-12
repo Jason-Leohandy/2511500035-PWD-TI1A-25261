@@ -85,7 +85,7 @@ endif;
       <form action="proses.php" method="POST">
 
         <label for="txtNama"><span>Nama:</span>
-          <input type="text" id="nama" placeholder="Masukkan nama" required autocomplete="name">
+          <input type="text" id="nama" placeholder="Masukkan nama" required autocomplete="required">
         </label>
 
         <label for="txtEmail"><span>Email:</span>
