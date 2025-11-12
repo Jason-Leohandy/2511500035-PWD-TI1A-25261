@@ -173,7 +173,7 @@ header li a:active {
 
 #contact button[type="reset"]:hover,
 #form_about button[type="reset"]:hover,
-#handling_form button[type="reset"]:hover, {
+#handling_form button[type="reset"]:hover {
     background-color: #ff3902;
     transform: translatey(1px);
 }
