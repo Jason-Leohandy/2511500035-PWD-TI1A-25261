@@ -52,66 +52,58 @@ endif;
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
-<section id="handling_form" class="section">
-    <h2>Pendaftaran Profil Pengunjung</h2>
-    <form action="proses.php" method="POST">
-      <label>NIM</label>
-      <input type="text" name="nim" required>
+</section>
+   <section id="Handling_form">
+      <form action="proses.php" method="POST">
+      
+        <p><label for="Nama"><span>Nama:</span>
+          <input type="text" id="nama" name="Nama" placeholder="Masukkan nama Anda" required autocomplete="required">
+        </label></p>
 
-      <label>Nama Lengkap</label>
-      <input type="text" name="nama" required>
+        <p><label for="NIM"><span>NIM:</span>
+          <input type="text" id="NIM" name="NIM" placeholder="Masukkan NIM Anda" required autocomplete="required">
+        </label></p>
 
-      <label>Tempat Lahir</label>
-      <input type="text" name="tempat" required>
+        <p> <label for="Tempat Lahir"><span>Tempat Lahir:</span>
+          <input id="text" name="Tempat Lahir" placeholder="Masukkan Tempat Lahir Anda" required autocomplete="required">
+        </label> </p>
+         <p><label for="Tanggal Lahir"><span>Tanggal Lahir:</span>
+          <input type="text" id="Tanggal Lahir" name="Tanggal Lahir" placeholder="Masukkan Tanggal Lahir Anda" required autocomplete="required">
+        </label></p>
+         <p><label for="Hobi"><span>Hobi:</span>
+          <input type="text" id="Hobi" name="Hobi" placeholder="Masukkan Hobi Anda" required autocomplete="required">
+        </label></p>
+        <p> <label for="Pasangan"><span>Pasangan:</span>
+          <input type="text" id="Pasangan" name="Pasangan" placeholder="Masukkan kalau ga jomblo" required autocomplete="required">
+        </label></p>
+        <p><label for="Pekerjaan"><span>Pekerjaan:</span>
+          <input type="text" id="Pekerjaan" name="Pekerjaan" placeholder="Masukkan Pekerjaan Anda" required autocomplete="required">
+        </label></p>
+         <p><label for="Nama Orang Tua"><span>Nama Orang Tua:</span>
+          <input type="text" id="Nama Orang Tua" name="Nama Orang Tua" placeholder="Masukkan Nama Orang Tua Anda" required autocomplete="required">
+        </label></p>
+         <p><label for="Nama Kakak"><span>Nama Kakak:</span>
+          <input type="text" id="Nama Kakak" name="Nama Kakak" placeholder="Masukkan Nama Kakak (Kalau ada)" required autocomplete="required">
+        </label></p>
+         <p><label for="Nama Adik"><span>Nama Adik:</span>
+          <input type="text" id="Nama Adik" name="Nama Adik" placeholder="Masukkan Nama Adik (Kalau Ada)" required autocomplete="required">
+        </label></p>
 
-      <label>Tanggal Lahir</label>
-      <input type="date" name="tgl" required>
-
-      <label>Hobi</label>
-      <input type="text" name="hobi">
-
-      <label>Pasangan</label>
-      <input type="text" name="pasangan">
-
-      <label>Pekerjaan</label>
-      <input type="text" name="pekerjaan">
-
-      <label>Nama Orang Tua</label>
-      <input type="text" name="ortu">
-
-      <label>Nama Kakak</label>
-      <input type="text" name="kakak">
-
-      <label>Nama Adik</label>
-      <input type="text" name="adik">
-
-      <div class="tombol">
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
-      </div>
-    </form>
-  </section>
+      </form>
 
-  <!-- ======= SECTION ABOUT ======= -->
-  <section id="about" class="section">
-    <h2>Tentang Saya</h2>
-    <?php
-      // Jika data dikirim dari proses.php
-      if (isset($_GET['nim'])) {
-        echo "<p><strong>NIM:</strong> " . htmlspecialchars($_GET['nim']) . "</p>";
-        echo "<p><strong>Nama Lengkap:</strong> " . htmlspecialchars($_GET['nama']) . "</p>";
-        echo "<p><strong>Tempat, Tanggal Lahir:</strong> " . htmlspecialchars($_GET['tempat']) . ", " . htmlspecialchars($_GET['tgl']) . "</p>";
-        echo "<p><strong>Hobi:</strong> " . htmlspecialchars($_GET['hobi']) . "</p>";
-        echo "<p><strong>Pasangan:</strong> " . htmlspecialchars($_GET['pasangan']) . "</p>";
-        echo "<p><strong>Pekerjaan:</strong> " . htmlspecialchars($_GET['pekerjaan']) . "</p>";
-        echo "<p><strong>Nama Orang Tua:</strong> " . htmlspecialchars($_GET['ortu']) . "</p>";
-        echo "<p><strong>Nama Kakak:</strong> " . htmlspecialchars($_GET['kakak']) . "</p>";
-        echo "<p><strong>Nama Adik:</strong> " . htmlspecialchars($_GET['adik']) . "</p>";
-      } else {
-        echo "<p>Belum ada data pengunjung yang didaftarkan.</p>";
-      }
-    ?>
-  </section>
+      <?php if (!empty($sesnama)): ?>
+        <br><hr>
+        <h2>Yang menghubungi kami</h2>
+        <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
+        <p><strong>Email :</strong> <?php echo $sesemail ?></p>
+        <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
+      <?php endif; ?>
+
+
+
+    </section>
 
      <section id="daftar">
       <h2>Pendaftaran Profil Pengunjung</h2>
@@ -127,19 +119,7 @@ endif;
         <p><strong>Nama Orang Tua:</strong><?php echo $sesnamaortu ?></p>
         <p><strong>Nama Kakak:</strong><?php echo $sesnamakakak ?></p>
         <p><strong>Nama Adik:</strong><?php echo $sesnamaadik ?></p>
-             <?php
-        session_start();
-        $sesnama = $_SESSION["Nama Lengkap"];
-        $sesnim = $_SESSION["NIM"];
-        $sestempatlahir = $_SESSION["Tempat Lahir"];
-        $sestanggallahir = $_SESSION["Tanggal Lahir"];
-        $seshobi = $_SESSION["Hobi"];
-        $sespasangan = $_SESSION["Pasangan"];
-        $sespekerjaan = $_SESSION["Pekerjaan"];
-        $sesnamaortu = $_SESSION["Nama Orang Tua"];
-        $sesnamakakak = $_SESSION["Nama Kakak"];
-        $sesnamaadik = $_SESSION["Nama Adik"];
-        ?>
+        
 
 
     <section id="about">
