@@ -103,17 +103,7 @@ endif;
       <?php endif; ?>
 
        <?php
-        session_start();
-        $sesnama = $_SESSION["nama lengkap"];
-        $sesnim = $_SESSION["nim"];
-        $sestempatlahir = $_SESSION["tempat lahir"];
-        $sestanggallahir = $_SESSION["tanggal lahir"];
-        $seshobi = $_SESSION["hobi"];
-        $sespasangan = $_SESSION["pasangan"];
-        $sespekerjaan = $_SESSION["pekerjaan"];
-        $sesnamaortu = $_SESSION["nama orang tua"];
-        $sesnamakakak = $_SESSION["nama kakak"];
-        $sesnamaadik = $_SESSION["nama adik"];
+     
         ?>
         <h2>Tentang Saya</h2>
         <p><strong>Nama Lengkap:</strong><?php echo $sesnama ?></p>
