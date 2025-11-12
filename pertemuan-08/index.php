@@ -52,14 +52,6 @@ endif;
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
-
-
-  <section id="Pendaftaran">
-    <?php
-
-    ?>
-    <h2>Pendaftaran Profil Pengunjung<h2>
-
     <section id="about">
       <?php
       $nim = 2511500010;
