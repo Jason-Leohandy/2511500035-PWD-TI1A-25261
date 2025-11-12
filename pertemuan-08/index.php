@@ -89,16 +89,19 @@ endif;
             </label>
 
         <label for="Nama"><span>Nama:</span>
-          <input type="text" id="nama" placeholder="Masukkan nama" required autocomplete="required">
+          <input type="text" id="nama" name="Nama" placeholder="Masukkan nama" required autocomplete="required">
         </label>
 
-        <label for="txtEmail"><span>Email:</span>
-          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+        <label for="NIM"><span>NIM:</span>
+          <input type="text" id="NIM" name="NIM" placeholder="Masukkan NIM" required autocomplete="required">
         </label>
 
-        <label for="txtPesan"><span>Pesan Anda:</span>
-          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+        <label for="Tempat Lahir"><span>Tempat Lahir:</span>
+          <input id="text" name="Tempat Lahir" placeholder="Masukkan Tempat Lahir" required>
+        </label>
+          
           <small id="charCount">0/200 karakter</small>
+          
         </label>
 
 
