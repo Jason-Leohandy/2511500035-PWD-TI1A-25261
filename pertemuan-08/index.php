@@ -83,8 +83,12 @@ endif;
 </section>
    <section id="Handling_form">
       <form action="proses.php" method="POST">
+        <label for="pekerjaan">
+                <span>Pekerjaan :</span>
+                <input type="text" id="pekerjaan" name="pekerjaan" placeholder="tulis pekerjaan anda" required>
+            </label>
 
-        <label for="txtNama"><span>Nama:</span>
+        <label for="Nama"><span>Nama:</span>
           <input type="text" id="nama" placeholder="Masukkan nama" required autocomplete="required">
         </label>
 
