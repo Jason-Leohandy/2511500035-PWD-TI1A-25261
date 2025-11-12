@@ -57,16 +57,16 @@ endif;
       <h2>Pendaftaran Profil Pengunjung</h2>
           <?php
         session_start();
-        $sesnama = $_SESSION["nama lengkap"];
-        $sesnim = $_SESSION["nim"];
-        $sestempatlahir = $_SESSION["tempat lahir"];
-        $sestanggallahir = $_SESSION["tanggal lahir"];
-        $seshobi = $_SESSION["hobi"];
-        $sespasangan = $_SESSION["pasangan"];
-        $sespekerjaan = $_SESSION["pekerjaan"];
-        $sesnamaortu = $_SESSION["nama orang tua"];
-        $sesnamakakak = $_SESSION["nama kakak"];
-        $sesnamaadik = $_SESSION["nama adik"];
+        $sesnama = $_SESSION["Nama Lengkap"];
+        $sesnim = $_SESSION["NIM"];
+        $sestempatlahir = $_SESSION["Tempat Lahir"];
+        $sestanggallahir = $_SESSION["Tanggal Lahir"];
+        $seshobi = $_SESSION["Hobi"];
+        $sespasangan = $_SESSION["Pasangan"];
+        $sespekerjaan = $_SESSION["Pekerjaan"];
+        $sesnamaortu = $_SESSION["Nama Orang Tua"];
+        $sesnamakakak = $_SESSION["Nama Kakak"];
+        $sesnamaadik = $_SESSION["Nama Adik"];
         ?>
         <h2>Tentang Saya</h2>
         <p><strong>Nama Lengkap:</strong><?php echo $sesnama ?></p>
