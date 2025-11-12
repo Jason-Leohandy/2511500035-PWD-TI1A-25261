@@ -99,7 +99,7 @@ header li a:active {
 }
 
 #about strong,
-#contact label>span 
+#contact label>span,
 #Handling_form>span{
   min-width: 180px;
   color: #003366;
