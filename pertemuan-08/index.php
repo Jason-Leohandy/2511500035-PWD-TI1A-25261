@@ -119,6 +119,7 @@ endif;
         <p><strong>Nama Orang Tua:</strong><?php echo $sesnamaortu ?></p>
         <p><strong>Nama Kakak:</strong><?php echo $sesnamakakak ?></p>
         <p><strong>Nama Adik:</strong><?php echo $sesnamaadik ?></p>
+      </section>
         
 
 
