@@ -53,7 +53,7 @@ endif;
     </section>
 
 
-     <section id="Daftar">
+     <section id="daftar">
       <h2>Pendaftaran Profil Pengunjung</h2>
 
 
