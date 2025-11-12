@@ -1,10 +1,24 @@
 <?php
 session_start();
-$sesnama = $_POST["txtNama"];
-$sesemail = $_POST["txtEmail"];
-$sespesan = $_POST["txtPesan"];
-$_SESSION["sesnama"] = $sesnama;
-$_SESSION["sesemail"] = $sesemail;
-$_SESSION["sespesan"] = $sespesan;
+$_SESSION["nama lengkap"] = $_POST["nama_lengkap"];
+$sesnim = $_SESSION["nim"];
+$sestempatlahir = $_SESSION["tempat lahir"];
+$sestanggallahir = $_SESSION["tanggal lahir"];
+$seshobi = $_SESSION["hobi"];
+$sespasangan = $_SESSION["pasangan"];
+$sespekerjaan = $_SESSION["pekerjaan"];
+$sesnamaortu = $_SESSION["nama orang tua"];
+$sesnamakakak = $_SESSION["nama kakak"];
+$sesnamaadik = $_SESSION["nama adik"];
 header("location: index.php");
 ?>
+$_SESSION["nama lengkap"] = $_POST["nama_lengkap"];
+$_SESSION["nim"] = $_POST["nim"];
+$_SESSION["tempat lahir"] = $_POST["tempat_lahir"];
+$_SESSION["tanggal lahir"] = $_POST["tanggal_lahir"];
+$_SESSION["hobi"] = $_POST["hobi"];
+$_SESSION["pasangan"] = $_POST["pasangan"];
+$_SESSION["pekerjaan"] = $_POST["pekerjaan"];
+$_SESSION["nama orang tua"] = $_POST["nama_orang_tua"];
+$_SESSION["nama kakak"] = $_POST["nama_kakak"];
+$_SESSION["nama adik"] = $_POST["nama_adik"];
