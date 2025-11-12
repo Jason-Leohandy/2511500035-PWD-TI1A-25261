@@ -63,7 +63,7 @@ header li a:active {
 #about,
 #contact,
 #daftar,
-#Handling_form {
+#form {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
@@ -76,7 +76,7 @@ header li a:active {
 #about h2,
 #contact h2,
 #daftar,
-#Handling_form {
+#form {
   color: #003366;
   border-bottom: 2px solid #003366;
   padding-bottom: 6px;
@@ -100,7 +100,7 @@ header li a:active {
 
 #about strong,
 #contact label>span,
-#Handling_form strong{
+#form strong{
   min-width: 180px;
   color: #003366;
   font-weight: 600;
