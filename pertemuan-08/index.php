@@ -68,9 +68,52 @@ endif;
         $sesnamakakak = $_SESSION["nama kakak"];
         $sesnamaadik = $_SESSION["nama adik"];
         ?>
-
+        <h2>Tentang Saya</h2>
+        <p><strong>Nama Lengkap:</strong><?php echo $sesnama ?></p>
+        <p><strong>NIM:</strong><?php echo $sesnim ?></p>
+        <p><strong>Tempat Lahir:</strong><?php echo $sestempatlahir ?></p>
+        <p><strong>Tanggal Lahir:</strong><?php echo $sestanggallahir ?></p>
+        <p><strong>Hobi:</strong><?php echo $seshobi ?></p>
+        <p><strong>Pasangan:</strong><?php echo $sespasangan ?></p>
+        <p><strong>Pekerjaan:</strong><?php echo $sespekerjaan ?></p>
+        <p><strong>Nama Orang Tua:</strong><?php echo $sesnamaortu ?></p>
+        <p><strong>Nama Kakak:</strong><?php echo $sesnamakakak ?></p>
+        <p><strong>Nama Adik:</strong><?php echo $sesnamaadik ?></p>
 
 </section>
+   <section id="Handling_form">
+      <h2>Kontak Kami</h2>
+      <form action="proses.php" method="POST">
+
+        <label for="txtNama"><span>Nama:</span>
+          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
+        </label>
+
+        <label for="txtEmail"><span>Email:</span>
+          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+        </label>
+
+        <label for="txtPesan"><span>Pesan Anda:</span>
+          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+          <small id="charCount">0/200 karakter</small>
+        </label>
+
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+
+      <?php if (!empty($sesnama)): ?>
+        <br><hr>
+        <h2>Yang menghubungi kami</h2>
+        <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
+        <p><strong>Email :</strong> <?php echo $sesemail ?></p>
+        <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
+      <?php endif; ?>
+
+
+
+    </section>
 
     <section id="about">
       <?php
