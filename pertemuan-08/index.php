@@ -55,7 +55,7 @@ endif;
 </section>
    <section id="Handling_form">
        <h2>Pendaftaran Profil Pengunjung<h2>
-      <form action="index_proses.php" method="POST">
+      <form action="second_proses.php" method="POST">
       
         <label for="Nama"><span>Nama:</span>
           <input type="text" id="nama" name="Nama" placeholder="Masukkan nama Anda" required autocomplete="Nama">
