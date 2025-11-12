@@ -55,6 +55,19 @@ endif;
 
      <section id="daftar">
       <h2>Pendaftaran Profil Pengunjung</h2>
+          <?php
+        session_start();
+        $sesnama = $_SESSION["nama lengkap"];
+        $sesnim = $_SESSION["nim"];
+        $sestempatlahir = $_SESSION["tempat lahir"];
+        $sestanggallahir = $_SESSION["tanggal lahir"];
+        $seshobi = $_SESSION["hobi"];
+        $sespasangan = $_SESSION["pasangan"];
+        $sespekerjaan = $_SESSION["pekerjaan"];
+        $sesnamaortu = $_SESSION["nama orang tua"];
+        $sesnamakakak = $_SESSION["nama kakak"];
+        $sesnamaadik = $_SESSION["nama adik"];
+        ?>
 
 
 </section>
