@@ -53,7 +53,8 @@ header li a:active {
 #about,
 #ipk,
 #contact,
-#form_about {
+#form_about,
+#Handling_form {
     background-color: lightgray;
     border-radius: 30px;
     padding: 30px;
@@ -65,7 +66,8 @@ header li a:active {
 #home h2,
 #about h2,
 #ipk h2,
-#contact h2 {
+#contact h2,
+#Handling_form h2{
     color: #0342ff;
     border-bottom: 5px solid #0342ff;
     padding-bottom: 6px;
