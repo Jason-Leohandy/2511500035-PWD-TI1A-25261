@@ -51,7 +51,8 @@ header li a:active {
 
 #home:target~header nav a[href="#home"],
 #about:target~header nav a[href="#about"],
-#contact:target~header nav a[href="#contact"] {
+#contact:target~header nav a[href="#contact"],
+#Handling_form:target~header nav a[href="#Handling_form"] {
   background: #fff;
   color: #003366;
   font-weight: bold;
@@ -62,7 +63,6 @@ header li a:active {
 #home,
 #about,
 #contact,
-#daftar,
 #Handling_form {
   background-color: #ffffff;
   border-radius: 10px;
@@ -75,8 +75,7 @@ header li a:active {
 #home h2,
 #about h2,
 #contact h2,
-#daftar,
-#Handling_form {
+#Handling_form h2 {
   color: #003366;
   border-bottom: 2px solid #003366;
   padding-bottom: 6px;
@@ -89,7 +88,8 @@ header li a:active {
 }
 
 #about p,
-#contact label{
+#contact label,
+#Handling_form label{ 
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
@@ -111,7 +111,7 @@ header li a:active {
 
 #contact input,
 #contact textarea,
-#Handing_form {
+#Handing_form textarea {
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -124,7 +124,7 @@ header li a:active {
 
 #contact button
 #ipk button 
-#Handling_button{
+#Handling_form button{
   margin-top: 10px;
   display: inline-block;
   padding: 10px 24px;
@@ -138,28 +138,28 @@ header li a:active {
 
 #contact button
 #ipk button
-#Handling_button [type="submit"] {
+#Handling_form button [type="submit"] {
   background-color: #003366;
   color: #fff;
   font-weight: 600;
 }
 
 #contact button,
-#Handling_button[type="reset"] {
+#Handling_form button[type="reset"] {
   background-color: #b4b4b4;
   color: #272727;
   font-weight: 500;
 }
 
 #contact button,
-#Handling_button[type="submit"]:hover {
+#Handling_form button[type="submit"]:hover {
   background-color: #0379ee;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 #contact button,
-#Handling_button[type="reset"]:hover {
+#Handling_form button[type="reset"]:hover {
   background-color: #cccccc;
   transform: translateY(-1px);
 }
@@ -229,13 +229,15 @@ footer {
   }
 
   #about p,
-  #contact label {
+  #contact label,
+  #Handling_form label {
     flex-direction: column;
     align-items: flex-start;
   }
 
   #about strong,
-  #contact label>span {
+  #contact label>span,
+  #Handling_form label>span {
     text-align: left;
     padding-right: 0;
     margin-bottom: 2px;
@@ -243,7 +245,8 @@ footer {
 
   #contact input,
   #contact textarea,
-  #contact button {
+  #contact button,
+  #Handling_form button{
     width: 100%;
   }
 }
