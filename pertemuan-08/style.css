@@ -89,7 +89,8 @@ header li a:active {
 }
 
 #about p,
-#contact label {
+#contact label,
+#Handling_form {
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
@@ -99,7 +100,8 @@ header li a:active {
 }
 
 #about strong,
-#contact label>span {
+#contact label>span 
+#Handling_form>span{
   min-width: 180px;
   color: #003366;
   font-weight: 600;
@@ -109,7 +111,8 @@ header li a:active {
 }
 
 #contact input,
-#contact textarea {
+#contact textarea,
+#Handing_form {
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -121,7 +124,8 @@ header li a:active {
 }
 
 #contact button
-#ipk button {
+#ipk button 
+#Handling_button{
   margin-top: 10px;
   display: inline-block;
   padding: 10px 24px;
@@ -134,25 +138,29 @@ header li a:active {
 }
 
 #contact button
-#ipk button [type="submit"] {
+#ipk button
+#Handling_button [type="submit"] {
   background-color: #003366;
   color: #fff;
   font-weight: 600;
 }
 
-#contact button[type="reset"] {
+#contact button,
+#Handling_button[type="reset"] {
   background-color: #b4b4b4;
   color: #272727;
   font-weight: 500;
 }
 
-#contact button[type="submit"]:hover {
+#contact button,
+#Handling_button[type="submit"]:hover {
   background-color: #0379ee;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-#contact button[type="reset"]:hover {
+#contact button,
+#Handling_button[type="reset"]:hover {
   background-color: #cccccc;
   transform: translateY(-1px);
 }
