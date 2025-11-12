@@ -57,36 +57,36 @@ endif;
       <form action="proses.php" method="POST">
       
         <p><label for="Nama"><span>Nama:</span>
-          <input type="text" id="nama" name="Nama" placeholder="Masukkan nama Anda" required autocomplete="required">
+          <input type="text" id="nama" name="Nama" placeholder="Masukkan nama Anda" required autocomplete="Nama">
         </label></p>
 
         <p><label for="NIM"><span>NIM:</span>
-          <input type="text" id="NIM" name="NIM" placeholder="Masukkan NIM Anda" required autocomplete="required">
+          <input type="text" id="NIM" name="NIM" placeholder="Masukkan NIM Anda" required autocomplete="NIM">
         </label></p>
 
         <p> <label for="Tempat Lahir"><span>Tempat Lahir:</span>
-          <input id="text" name="Tempat Lahir" placeholder="Masukkan Tempat Lahir Anda" required autocomplete="required">
+          <input id="text" name="Tempat Lahir" placeholder="Masukkan Tempat Lahir Anda" required autocomplete="Tempat Lahir">
         </label> </p>
          <p><label for="Tanggal Lahir"><span>Tanggal Lahir:</span>
-          <input type="text" id="Tanggal Lahir" name="Tanggal Lahir" placeholder="Masukkan Tanggal Lahir Anda" required autocomplete="required">
+          <input type="text" id="Tanggal Lahir" name="Tanggal Lahir" placeholder="Masukkan Tanggal Lahir Anda" required autocomplete="Tanggal Lahir">
         </label></p>
          <p><label for="Hobi"><span>Hobi:</span>
-          <input type="text" id="Hobi" name="Hobi" placeholder="Masukkan Hobi Anda" required autocomplete="required">
+          <input type="text" id="Hobi" name="Hobi" placeholder="Masukkan Hobi Anda" required autocomplete="Hobi">
         </label></p>
         <p> <label for="Pasangan"><span>Pasangan:</span>
-          <input type="text" id="Pasangan" name="Pasangan" placeholder="Masukkan kalau ga jomblo" required autocomplete="required">
+          <input type="text" id="Pasangan" name="Pasangan" placeholder="Masukkan kalau ga jomblo" required autocomplete="Pasangan">
         </label></p>
         <p><label for="Pekerjaan"><span>Pekerjaan:</span>
-          <input type="text" id="Pekerjaan" name="Pekerjaan" placeholder="Masukkan Pekerjaan Anda" required autocomplete="required">
+          <input type="text" id="Pekerjaan" name="Pekerjaan" placeholder="Masukkan Pekerjaan Anda" required autocomplete="Pekerjaan">
         </label></p>
          <p><label for="Nama Orang Tua"><span>Nama Orang Tua:</span>
-          <input type="text" id="Nama Orang Tua" name="Nama Orang Tua" placeholder="Masukkan Nama Orang Tua Anda" required autocomplete="required">
+          <input type="text" id="Nama Orang Tua" name="Nama Orang Tua" placeholder="Masukkan Nama Orang Tua Anda" required autocomplete="Nama Orang Tua">
         </label></p>
          <p><label for="Nama Kakak"><span>Nama Kakak:</span>
-          <input type="text" id="Nama Kakak" name="Nama Kakak" placeholder="Masukkan Nama Kakak (Kalau ada)" required autocomplete="required">
+          <input type="text" id="Nama Kakak" name="Nama Kakak" placeholder="Masukkan Nama Kakak (Kalau ada)" required autocomplete="Nama Kakak">
         </label></p>
          <p><label for="Nama Adik"><span>Nama Adik:</span>
-          <input type="text" id="Nama Adik" name="Nama Adik" placeholder="Masukkan Nama Adik (Kalau Ada)" required autocomplete="required">
+          <input type="text" id="Nama Adik" name="Nama Adik" placeholder="Masukkan Nama Adik (Kalau Ada)" required autocomplete="Nama Adik">
         </label></p>
 
         <button type="submit">Kirim</button>
