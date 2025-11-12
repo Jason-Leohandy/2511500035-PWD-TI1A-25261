@@ -52,34 +52,6 @@ endif;
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
-
-     <section id="daftar">
-      <h2>Pendaftaran Profil Pengunjung</h2>
-          <?php
-        session_start();
-        $sesnama = $_SESSION["Nama Lengkap"];
-        $sesnim = $_SESSION["NIM"];
-        $sestempatlahir = $_SESSION["Tempat Lahir"];
-        $sestanggallahir = $_SESSION["Tanggal Lahir"];
-        $seshobi = $_SESSION["Hobi"];
-        $sespasangan = $_SESSION["Pasangan"];
-        $sespekerjaan = $_SESSION["Pekerjaan"];
-        $sesnamaortu = $_SESSION["Nama Orang Tua"];
-        $sesnamakakak = $_SESSION["Nama Kakak"];
-        $sesnamaadik = $_SESSION["Nama Adik"];
-        ?>
-        <h2>Tentang Saya</h2>
-        <p><strong>Nama Lengkap:</strong><?php echo $sesnama ?></p>
-        <p><strong>NIM:</strong><?php echo $sesnim ?></p>
-        <p><strong>Tempat Lahir:</strong><?php echo $sestempatlahir ?></p>
-        <p><strong>Tanggal Lahir:</strong><?php echo $sestanggallahir ?></p>
-        <p><strong>Hobi:</strong><?php echo $seshobi ?></p>
-        <p><strong>Pasangan:</strong><?php echo $sespasangan ?></p>
-        <p><strong>Pekerjaan:</strong><?php echo $sespekerjaan ?></p>
-        <p><strong>Nama Orang Tua:</strong><?php echo $sesnamaortu ?></p>
-        <p><strong>Nama Kakak:</strong><?php echo $sesnamakakak ?></p>
-        <p><strong>Nama Adik:</strong><?php echo $sesnamaadik ?></p>
-
 </section>
    <section id="Handling_form">
       <form action="proses.php" method="POST">
@@ -132,6 +104,34 @@ endif;
 
 
     </section>
+
+     <section id="daftar">
+      <h2>Pendaftaran Profil Pengunjung</h2>
+          <?php
+        session_start();
+        $sesnama = $_SESSION["Nama Lengkap"];
+        $sesnim = $_SESSION["NIM"];
+        $sestempatlahir = $_SESSION["Tempat Lahir"];
+        $sestanggallahir = $_SESSION["Tanggal Lahir"];
+        $seshobi = $_SESSION["Hobi"];
+        $sespasangan = $_SESSION["Pasangan"];
+        $sespekerjaan = $_SESSION["Pekerjaan"];
+        $sesnamaortu = $_SESSION["Nama Orang Tua"];
+        $sesnamakakak = $_SESSION["Nama Kakak"];
+        $sesnamaadik = $_SESSION["Nama Adik"];
+        ?>
+        <h2>Tentang Saya</h2>
+        <p><strong>Nama Lengkap:</strong><?php echo $sesnama ?></p>
+        <p><strong>NIM:</strong><?php echo $sesnim ?></p>
+        <p><strong>Tempat Lahir:</strong><?php echo $sestempatlahir ?></p>
+        <p><strong>Tanggal Lahir:</strong><?php echo $sestanggallahir ?></p>
+        <p><strong>Hobi:</strong><?php echo $seshobi ?></p>
+        <p><strong>Pasangan:</strong><?php echo $sespasangan ?></p>
+        <p><strong>Pekerjaan:</strong><?php echo $sespekerjaan ?></p>
+        <p><strong>Nama Orang Tua:</strong><?php echo $sesnamaortu ?></p>
+        <p><strong>Nama Kakak:</strong><?php echo $sesnamakakak ?></p>
+        <p><strong>Nama Adik:</strong><?php echo $sesnamaadik ?></p>
+
 
     <section id="about">
       <?php
