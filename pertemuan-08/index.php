@@ -103,7 +103,7 @@ endif;
       <?php endif; ?>
 
        <?php
-        session_start();
+
         $sesnama = $_SESSION["Nama Lengkap"];
         $sesnim = $_SESSION["NIM"];
         $sestempatlahir = $_SESSION["Tempat Lahir"];
