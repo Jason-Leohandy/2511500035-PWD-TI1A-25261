@@ -89,8 +89,7 @@ header li a:active {
 }
 
 #about p,
-#contact label,
-#Handling_form {
+#contact label{
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
