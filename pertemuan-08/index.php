@@ -92,9 +92,10 @@ endif;
           <input type="text" id="NIM" name="NIM" placeholder="Masukkan NIM Anda" required autocomplete="required">
         </label>
 
-        <label for="Tempat Lahir"><span>Tempat Lahir:</span>
+        <p> <label for="Tempat Lahir"><span>Tempat Lahir:</span>
           <input id="text" name="Tempat Lahir" placeholder="Masukkan Tempat Lahir Anda" required autocomplete="required">
-        </label>
+        </label> </p>
+
           <small id="charCount">0/200 karakter</small>
         </label>
          <label for="Tanggal Lahir"><span>Tanggal Lahir:</span>
