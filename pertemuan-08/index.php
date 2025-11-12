@@ -101,9 +101,8 @@ endif;
         <p><strong>Email :</strong> <?php echo $sesemail ?></p>
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
-    </section>
-<section>
- <?php
+
+       <?php
         session_start();
         $sesnama = $_SESSION["nama lengkap"];
         $sesnim = $_SESSION["nim"];
@@ -127,7 +126,9 @@ endif;
         <p><strong>Nama Orang Tua:</strong><?php echo $sesnamaortu ?></p>
         <p><strong>Nama Kakak:</strong><?php echo $sesnamakakak ?></p>
         <p><strong>Nama Adik:</strong><?php echo $sesnamaadik ?></p>
-      </section>
+    </section>
+
+      
     <section id="about">
       <?php
       $nim = 2511500010;
