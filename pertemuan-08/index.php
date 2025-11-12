@@ -101,12 +101,33 @@ endif;
         <p><strong>Email :</strong> <?php echo $sesemail ?></p>
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
-
-
-
     </section>
-
-
+<section>
+ <?php
+        session_start();
+        $sesnama = $_SESSION["nama lengkap"];
+        $sesnim = $_SESSION["nim"];
+        $sestempatlahir = $_SESSION["tempat lahir"];
+        $sestanggallahir = $_SESSION["tanggal lahir"];
+        $seshobi = $_SESSION["hobi"];
+        $sespasangan = $_SESSION["pasangan"];
+        $sespekerjaan = $_SESSION["pekerjaan"];
+        $sesnamaortu = $_SESSION["nama orang tua"];
+        $sesnamakakak = $_SESSION["nama kakak"];
+        $sesnamaadik = $_SESSION["nama adik"];
+        ?>
+        <h2>Tentang Saya</h2>
+        <p><strong>Nama Lengkap:</strong><?php echo $sesnama ?></p>
+        <p><strong>NIM:</strong><?php echo $sesnim ?></p>
+        <p><strong>Tempat Lahir:</strong><?php echo $sestempatlahir ?></p>
+        <p><strong>Tanggal Lahir:</strong><?php echo $sestanggallahir ?></p>
+        <p><strong>Hobi:</strong><?php echo $seshobi ?></p>
+        <p><strong>Pasangan:</strong><?php echo $sespasangan ?></p>
+        <p><strong>Pekerjaan:</strong><?php echo $sespekerjaan ?></p>
+        <p><strong>Nama Orang Tua:</strong><?php echo $sesnamaortu ?></p>
+        <p><strong>Nama Kakak:</strong><?php echo $sesnamakakak ?></p>
+        <p><strong>Nama Adik:</strong><?php echo $sesnamaadik ?></p>
+      </section>
     <section id="about">
       <?php
       $nim = 2511500010;
