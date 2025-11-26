@@ -116,7 +116,7 @@ endif;
       "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => "&copy; 2025"],
       "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
       "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
-      
+      "adik" => ["label" => "Nama Adik:", "suffix" => ""],
     ];
     ?>
 
