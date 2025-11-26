@@ -13,5 +13,5 @@ $arrKontak = [
 "pesan" => $_POST["txtPesan"] ?? "",
 ];
 $_SESSION["Kontak"] = $arrKontak;
-header("location: index.php#Kontak");
+header("location: index.php#contact");
 ?>
