@@ -14,4 +14,5 @@
   <li>mengcopy Bahan Ajar di e learning (punya dosen) lalu paste ke pertemuan-09</li>
   <li>memodifikasi format yang ada di proses.php menjadi bentuk array associative</li>
   <li>menghapus isi kode section id about dan menggantinya menjadi kode htmlspecialchars</li>
+  <li>Menambalan file Fungsi.php</li>
 </ol>
