@@ -2,21 +2,6 @@
 session_start();
 
 require_once __DIR__ . '/fungsi.php';
-
-$sesnama = "";
-if (isset($_SESSION["sesnama"])):
-  $sesnama = $_SESSION["sesnama"];
-endif;
-
-$sesemail = "";
-if (isset($_SESSION["sesemail"])):
-  $sesemail = $_SESSION["sesemail"];
-endif;
-
-$sespesan = "";
-if (isset($_SESSION["sespesan"])):
-  $sespesan = $_SESSION["sespesan"];
-endif;
 ?>
 
 <!DOCTYPE html>
@@ -155,14 +140,22 @@ endif;
       <?php endif; ?>
 
      <?php
-    $biodata = $_SESSION["biodata"] ?? [];
+    $kontak = $_SESSION["kontak"] ?? [];
 
     $fieldconfig = [
       "nama" => ["label" => "Nama:", "suffix" => ""],
       "email" => ["label" => "Email:", "suffix" => ""],
       "pesan" => ["label" => "Pesan Anda:", "suffix" => ""],
     ];
-    ?>
+?>
+    <?php foreach  ($fieldconfig as $kunci => $metadata): ?>
+      <p>
+        <strong><?= $metadata["label"] ?></strong>
+        <?=htmlspecialchars($biodata[$kunci] ?? "") ?>
+        <?= $metadata["suffix"]?>
+    </p>
+    <?php endforeach; ?>
+    
 
     </section>
   </main>
