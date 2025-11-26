@@ -144,10 +144,10 @@ endif;
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
-  
+      </form>
 
        <?php
-    $biodata = $_SESSION["biodata"] ?? [];
+    $biodata = $_SESSION["Kontak"] ?? [];
 
     $fieldconfig = [
       "nama" => ["label" => "Nama:", "suffix" => ""],
