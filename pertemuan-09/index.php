@@ -155,6 +155,7 @@ endif;
       <?php endif; ?>
     </section>
      <?php
+     <section>
     $Kontak = $_SESSION["Kontak Kami"] ?? [];
 
     $fieldconfig = [
@@ -163,6 +164,7 @@ endif;
       "Pesan" => ["label" => "Pesan Anda:", "suffix" => ""],
     ];
     ?>
+    </section>
   </main>
 
   <footer>
