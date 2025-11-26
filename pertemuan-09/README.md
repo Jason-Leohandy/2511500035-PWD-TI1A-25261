@@ -15,4 +15,7 @@
   <li>memodifikasi format yang ada di proses.php menjadi bentuk array associative</li>
   <li>menghapus isi kode section id about dan menggantinya menjadi kode htmlspecialchars</li>
   <li>Menambalan file Fungsi.php</li>
+  <li>menambahkan kode function tanggal</li>
+  <li>Menambahkan kode untuk merender hasil/output biodata yang sudah diisi
+  </li>
 </ol>
