@@ -127,7 +127,7 @@ endif;
 
     <section id="contact">
       <h2>Kontak Kami</h2>
-      <form action="proses2.php" method="POST">
+      <form action="proses.php" method="POST">
 
         <label for="txtNama"><span>Nama:</span>
           <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
@@ -146,8 +146,16 @@ endif;
         <button type="reset">Batal</button>
       </form>
 
-       <?php
-    $biodata = $_SESSION["Kontak"] ?? [];
+      <?php if (!empty($sesnama)): ?>
+        <br><hr>
+        <h2>Yang menghubungi kami</h2>
+        <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
+        <p><strong>Email :</strong> <?php echo $sesemail ?></p>
+        <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
+      <?php endif; ?>
+
+     <?php
+    $biodata = $_SESSION["biodata"] ?? [];
 
     $fieldconfig = [
       "nama" => ["label" => "Nama:", "suffix" => ""],
@@ -155,6 +163,7 @@ endif;
       "pesan" => ["label" => "Pesan Anda:", "suffix" => ""],
     ];
     ?>
+
     </section>
   </main>
 
