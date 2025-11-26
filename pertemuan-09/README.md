@@ -18,4 +18,5 @@
   <li>menambahkan kode function tanggal</li>
   <li>Menambahkan kode untuk merender hasil/output biodata yang sudah diisi
   </li>
+  <li>Mengganti kode di section about menjadi tampilkan biodata</li>
 </ol>
