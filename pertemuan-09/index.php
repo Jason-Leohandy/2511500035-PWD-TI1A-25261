@@ -154,8 +154,8 @@ endif;
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
     </section>
-     <?php
      <section>
+     <?php
     $Kontak = $_SESSION["Kontak Kami"] ?? [];
 
     $fieldconfig = [
