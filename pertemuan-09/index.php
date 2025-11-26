@@ -154,8 +154,15 @@ endif;
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
 
+       <?php
+    $Kontak = $_SESSION["Kontak Kami"] ?? [];
 
-
+    $fieldconfig = [
+      "nama" => ["label" => "Nama Lengkap:", "suffix" => ""],
+      "email" => ["label" => "Email:", "suffix" => ""],
+      "Pesan" => ["label" => "Pesan Anda:", "suffix" => ""],
+    ];
+    ?>
     </section>
   </main>
 
