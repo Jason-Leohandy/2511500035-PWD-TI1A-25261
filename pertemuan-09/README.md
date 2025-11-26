@@ -19,4 +19,5 @@
   <li>Menambahkan kode untuk merender hasil/output biodata yang sudah diisi
   </li>
   <li>Mengganti kode di section about menjadi tampilkan biodata</li>
+  <li>Menambah kode require dan __DIR__ pada di index.php</li>
 </ol>
