@@ -116,7 +116,7 @@ endif;
       "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => "&copy; 2025"],
       "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
       "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
-      "adik" => ["label" => "Nama Adik:", "suffix" => ""],
+      
     ];
     ?>
 
@@ -153,8 +153,8 @@ endif;
         <p><strong>Email :</strong> <?php echo $sesemail ?></p>
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
-
-       <?php
+    </section>
+     <?php
     $Kontak = $_SESSION["Kontak Kami"] ?? [];
 
     $fieldconfig = [
@@ -163,7 +163,6 @@ endif;
       "Pesan" => ["label" => "Pesan Anda:", "suffix" => ""],
     ];
     ?>
-    </section>
   </main>
 
   <footer>
