@@ -9,5 +9,6 @@ Hari ini, Rabu 12 November 2025, saya mempelajari:
  <li>session start di index.php</li>
  <li>menambahkan session id handling form</li>
  <li>Membuat Handling_form untuk handling Pendaftaran Profil pengunjung</li>
+ <li>STyling css</li>
  <li></li>
-</ol>s
+</ol>

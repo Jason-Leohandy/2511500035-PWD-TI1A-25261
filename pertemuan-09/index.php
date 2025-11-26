@@ -15,6 +15,56 @@ $sespesan = "";
 if (isset($_SESSION["sespesan"])):
   $sespesan = $_SESSION["sespesan"];
 endif;
+
+$txtNim = "";
+if (isset($_SESSION["txtNim"])):
+  $txtNim = $_SESSION["txtNim"];
+endif;
+
+$txtNmLengkap = "";
+if (isset($_SESSION["txtNmLengkap"])):
+  $txtNmLengkap = $_SESSION["txtNmLengkap"];
+endif;
+
+$txtT4Lhr = "";
+if (isset($_SESSION["txtT4Lhr"])):
+  $txtT4Lhr = $_SESSION["txtT4Lhr"];
+endif;
+
+$txtTglLhr = "";
+if (isset($_SESSION["txtTglLhr"])):
+  $txtTglLhr = $_SESSION["txtTglLhr"];
+endif;
+
+$txtHobi = "";
+if (isset($_SESSION["txtHobi"])):
+  $txtHobi = $_SESSION["txtHobi"];
+endif;
+
+$txtPasangan = "";
+if (isset($_SESSION["txtPasangan"])):
+  $txtPasangan = $_SESSION["txtPasangan"];
+endif;
+
+$txtKerja = "";
+if (isset($_SESSION["txtKerja"])):
+  $txtKerja = $_SESSION["txtKerja"];
+endif;
+
+$txtNmOrtu = "";
+if (isset($_SESSION["txtNmOrtu"])):
+  $txtNmOrtu = $_SESSION["txtNmOrtu"];
+endif;
+
+$txtNmKakak = "";
+if (isset($_SESSION["txtNmKakak"])):
+  $txtNmKakak = $_SESSION["txtNmKakak"];
+endif;
+
+$txtNmAdik = "";
+if (isset($_SESSION["txtNmAdik"])):
+  $txtNmAdik = $_SESSION["txtNmAdik"];
+endif;
 ?>
 
 <!DOCTYPE html>
@@ -52,33 +102,68 @@ endif;
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
+    <section id="biodata">
+      <h2>Biodata Sederhana Mahasiswa</h2>
+      <form action="proses.php" method="POST">
+
+        <label for="txtNim"><span>NIM:</span>
+          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required>
+        </label>
+
+        <label for="txtNmLengkap"><span>Nama Lengkap:</span>
+          <input type="text" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" required>
+        </label>
+
+        <label for="txtT4Lhr"><span>Tempat Lahir:</span>
+          <input type="text" id="txtT4Lhr" name="txtT4Lhr" placeholder="Masukkan Tempat Lahir" required>
+        </label>
+
+        <label for="txtTglLhr"><span>Tanggal Lahir:</span>
+          <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required>
+        </label>
+
+        <label for="txtHobi"><span>Hobi:</span>
+          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required>
+        </label>
+
+        <label for="txtPasangan"><span>Pasangan:</span>
+          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required>
+        </label>
+
+        <label for="txtKerja"><span>Pekerjaan:</span>
+          <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan" required>
+        </label>
+
+        <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
+          <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua" required>
+        </label>
+
+        <label for="txtNmKakak"><span>Nama Kakak:</span>
+          <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" required>
+        </label>
+
+         <label for="txtNmAdik"><span>Nama Adik:</span>
+          <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required>
+        </label>
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+
+    </section>
+
     <section id="about">
-      <?php
-      $nim = 2511500010;
-      $NIM = '0344300002';
-      $nama = "Say'yid Abdullah";
-      $Nama = 'Al\'kautar Benyamin';
-      $tempat = "Jebus";
-      ?>
       <h2>Tentang Saya</h2>
-      <p><strong>NIM:</strong>
-        <?php
-        echo $NIM;
-        ?>
-      </p>
-      <p><strong>Nama Lengkap:</strong>
-        <?php
-        echo $Nama;
-        ?> &#128526;
-      </p>
-      <p><strong>Tempat Lahir:</strong> <?php echo $tempat; ?></p>
-      <p><strong>Tanggal Lahir:</strong> 1 Januari 2000</p>
-      <p><strong>Hobi:</strong> Memasak, coding, dan bermain musik &#127926;</p>
-      <p><strong>Pasangan:</strong> Belum ada &hearts;</p>
-      <p><strong>Pekerjaan:</strong> Dosen di ISB Atma Luhur &copy; 2025</p>
-      <p><strong>Nama Orang Tua:</strong> Bapak Setiawan dan Ibu Maria</p>
-      <p><strong>Nama Kakak:</strong> Antonius Setiawan</p>
-      <p><strong>Nama Adik:</strong> <?php echo $sespesan ?></p>
+      <p><strong>NIM:</strong> <?= $txtNim ?></p>
+      <p><strong>Nama Lengkap:</strong> <?= $txtNmLengkap ?> &#128526;</p>
+      <p><strong>Tempat Lahir:</strong> <?= $txtT4Lhr ?></p>
+      <p><strong>Tanggal Lahir:</strong> <?= $txtTglLhr ?></p>
+      <p><strong>Hobi:</strong> <?= $txtHobi ?> &#127926;</p>
+      <p><strong>Pasangan:</strong> <?= $txtPasangan ?> &hearts;</p>
+      <p><strong>Pekerjaan:</strong> <?= $txtKerja ?> &copy; 2025</p>
+      <p><strong>Nama Orang Tua:</strong> <?= $txtNmOrtu ?></p>
+      <p><strong>Nama Kakak:</strong> <?= $txtNmKakak ?></p>
+      <p><strong>Nama Adik:</strong> <?= $txtNmAdik ?></p>
     </section>
 
     <section id="contact">
@@ -97,7 +182,6 @@ endif;
           <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
           <small id="charCount">0/200 karakter</small>
         </label>
-
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
