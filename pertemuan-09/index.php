@@ -154,8 +154,27 @@ endif;
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
     </section>
-     <section>
-     <?php
+     
+    <section id="kontak">
+      <h2>Kontak Kami</h2>
+      <form action="proses.php" method="POST">
+
+        <label for="txtNama"><span>Nama:</span>
+          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan Nama" required>
+        </label>
+
+        <label for="txtEmail"><span>email:</span>
+          <input type="text" id="txtEmail" name="txtEmail" placeholder="Masukkan Email" required>
+        </label>
+
+        <label for="txtPesan"><span>Pesan Anda:</span>
+          <input type="text" id="txtPesan" name="txtPesan" placeholder="Tulis Pesan Anda" required>
+        </label>
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+      <?php
     $Kontak = $_SESSION["Kontak Kami"] ?? [];
 
     $fieldconfig = [
@@ -164,7 +183,7 @@ endif;
       "Pesan" => ["label" => "Pesan Anda:", "suffix" => ""],
     ];
     ?>
-    </section>
+      </section>
   </main>
 
   <footer>
