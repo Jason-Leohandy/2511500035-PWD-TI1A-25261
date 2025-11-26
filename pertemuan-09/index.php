@@ -104,7 +104,7 @@ endif;
 
     </section>
     <?php
-    $biodata = &$_SESSION["biodata"] ?? [];
+    $biodata = $_SESSION["biodata"] ?? [];
 
     $fieldconfig = [
       "nim" => ["label" => "NIM:", "suffix" => ""],
