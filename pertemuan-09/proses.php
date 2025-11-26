@@ -21,9 +21,9 @@ $arrBiodata = [
 ];
 
 $arrBiodata = [
-"nama" => $_POST["Nama"] ?? "",
-"email" => $_POST["Email"] ?? "",
-"pesan" => $_POST["Pesan"] ?? "",
+"nama" => $_POST["txtNama"] ?? "",
+"email" => $_POST["txtEmail"] ?? "",
+"pesan" => $_POST["txtPesan"] ?? "",
 ];
 
 $_SESSION["biodata"] = $arrBiodata;
