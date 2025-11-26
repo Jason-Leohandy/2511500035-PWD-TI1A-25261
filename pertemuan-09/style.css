@@ -52,7 +52,8 @@ header li a:active {
 #home:target~header nav a[href="#home"],
 #about:target~header nav a[href="#about"],
 #contact:target~header nav a[href="#contact"],
-#biodata:target~header nav a[href="#biodata"] {
+#biodata:target~header nav a[href="#biodata"],
+#Kontak:target~header nav a[href="#Kontak"] {
   background: #fff;
   color: #003366;
   font-weight: bold;
@@ -63,7 +64,8 @@ header li a:active {
 #home,
 #about,
 #contact,
-#biodata {
+#biodata,
+#Kontak {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
@@ -75,7 +77,8 @@ header li a:active {
 #home h2,
 #about h2,
 #contact h2,
-#biodata h2 {
+#biodata h2,
+#Kontak h2 {
   color: #003366;
   border-bottom: 2px solid #003366;
   padding-bottom: 6px;
@@ -100,7 +103,8 @@ header li a:active {
 
 #about strong,
 #contact label>span,
-#biodata label>span {
+#biodata label>span,
+#Kontak label>span {
   min-width: 180px;
   color: #003366;
   font-weight: 600;
@@ -111,7 +115,9 @@ header li a:active {
 
 #contact input,
 #contact textarea,
-#biodata input {
+#biodata input,
+#Kontak input,
+#Kontak textarea {
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -123,7 +129,8 @@ header li a:active {
 }
 
 #contact button,
-#biodata button {
+#biodata button,
+#Kontak button {
   margin-top: 10px;
   display: inline-block;
   padding: 10px 24px;
@@ -136,14 +143,17 @@ header li a:active {
 }
 
 #contact button[type="submit"],
-#biodata button[type="submit"] {
+#biodata button[type="submit"],
+#Kontak button [type="submit"] {
   background-color: #003366;
   color: #fff;
   font-weight: 600;
 }
 
 #contact button[type="reset"],
-#biodata button[type="reset"] {
+#biodata button[type="reset"],
+#Kontak button[type="reset"]
+ {
   background-color: #b4b4b4;
   color: #272727;
   font-weight: 500;
