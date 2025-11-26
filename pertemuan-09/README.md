@@ -11,4 +11,7 @@
   <li>tangkap session dari file proses selesai</li>
   <li>echo session ke nilai label section contact</li>
   <li>echo session ke nilai label section contact selesai</li>
+  <li>mengcopy Bahan Ajar di e learning (punya dosen) lalu paste ke pertemuan-09</li>
+  <li>memodifikasi format yang ada di proses.php menjadi bentuk array associative</li>
+  <li>menghapus isi kode section id about dan menggantinya menjadi kode htmlspecialchars</li>
 </ol>
