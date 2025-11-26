@@ -103,22 +103,7 @@ endif;
       </form>
 
     </section>
-    <?php
-    $biodata = $_SESSION["biodata"] ?? [];
-
-    $fieldconfig = [
-      "nim" => ["label" => "NIM:", "suffix" => ""],
-      "nama" => ["label" => "Nama Lengkap:", "suffix" => "&#128526;"],
-      "tempat" => ["label" => "Tempat Lahir:", "suffix" => ""],
-      "tanggal" => ["label" => "Tanggal Lahir:", "suffix" => ""],
-      "hobi" => ["label" => "hobi:", "suffix" => "&#127926"],
-      "pasangan" => ["label" => "Pasangan:", "suffix" => "&hearts;"],
-      "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => "&copy; 2025"],
-      "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
-      "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
-      "adik" => ["label" => "Nama Adik:", "suffix" => ""],
-    ];
-    ?>
+    
 
     <section id="about">
       <h2>Tentang Saya</h2>
