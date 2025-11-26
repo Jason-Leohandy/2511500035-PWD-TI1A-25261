@@ -120,13 +120,7 @@ endif;
 
     <section id="about">
       <h2>Tentang Saya</h2>
-      <?php foreach ($fieldconfig as $kunci => $metadata): ?>
-        <p>
-          <strong><?= $metadata["label"] ?></strong>
-          <?= htmlspecialchars($biodata[$kunci] ?? "") ?>
-          <?= $metadata["suffix"] ?>
-        </p>
-      <?php endforeach; ?>
+        <?= tampilkanBiodata($fieldconfig,$biodata)?>
     </section>
 
     <section id="contact">
