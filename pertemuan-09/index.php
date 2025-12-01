@@ -79,24 +79,24 @@ require_once __DIR__ . '/fungsi.php';
           <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" required>
         </label>
 
-         <label for="txtNmAdik"><span>Nama Adik:</span>
+        <label for="txtNmAdik"><span>Nama Adik:</span>
           <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required>
         </label>
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
-
     </section>
+
     <?php
     $biodata = $_SESSION["biodata"] ?? [];
 
-    $fieldconfig = [
+    $fieldConfig = [
       "nim" => ["label" => "NIM:", "suffix" => ""],
       "nama" => ["label" => "Nama Lengkap:", "suffix" => "&#128526;"],
       "tempat" => ["label" => "Tempat Lahir:", "suffix" => ""],
-      "tanggal" => ["label" => "Tanggal Lahir:", "suffix" => ""],
-      "hobi" => ["label" => "hobi:", "suffix" => "&#127926"],
+      "tanggal" => ["label" => "Tanggal Lahir", "suffix" => ""],
+      "hobi" => ["label" => "Hobi:", "suffix" => "&#127926;"],
       "pasangan" => ["label" => "Pasangan:", "suffix" => "&hearts;"],
       "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => "&copy; 2025"],
       "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
@@ -107,7 +107,7 @@ require_once __DIR__ . '/fungsi.php';
 
     <section id="about">
       <h2>Tentang Saya</h2>
-        <?= tampilkanBiodata( $fieldconfig, $biodata) ?>
+      <?= tampilkanBiodata($fieldConfig, $biodata) ?>
     </section>
 
     <section id="contact">
@@ -132,31 +132,28 @@ require_once __DIR__ . '/fungsi.php';
       </form>
 
       <?php if (!empty($sesnama)): ?>
-        <br><hr>
+        <br>
+        <hr>
         <h2>Yang menghubungi kami</h2>
         <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
         <p><strong>Email :</strong> <?php echo $sesemail ?></p>
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
+    </section>
 
-     <?php
-    $kontak = $_SESSION["kontak"] ?? [];
+    <?php
+    $pengguna = $_SESSION["pengguna"] ?? [];
 
-    $fieldconfig = [
-      "nama" => ["label" => "Nama:", "suffix" => ""],
+    $userConfig = [
+      "name" => ["label" => "Nama:", "suffix" => ""],
       "email" => ["label" => "Email:", "suffix" => ""],
-      "pesan" => ["label" => "Pesan Anda:", "suffix" => ""],
+      "pesan" => ["label" => "Pesan:", "suffix" => ""],
     ];
-?>
-    <?php foreach  ($fieldconfig as $kunci => $metadata): ?>
-      <p>
-        <strong><?= $metadata["label"] ?></strong>
-        <?=htmlspecialchars($biodata[$kunci] ?? "") ?>
-        <?= $metadata["suffix"]?>
-    </p>
-    <?php endforeach; ?>
-    
+    ?>
 
+    <section id="kontak">
+      <h2>Yang Menghubungi Kami</h2>
+      <?= tampilkanUser( $userConfig , $pengguna) ?>
     </section>
   </main>
 
