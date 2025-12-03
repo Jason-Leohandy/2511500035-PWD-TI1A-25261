@@ -1,89 +1,157 @@
-$namaMatkul = ["Kalkulus", "Logika Informatika", "Konsep Basis Data", "Wawasan Berbudi Luhur", "Pemrograman Web Dasar"];
-$sks        = [4, 4, 4, 3, 4];
-$hadir      = [90, 70, 80, 75, 80];
-$tugas      = [60, 100, 70, 80, 80];
-$uts        = [80, 80, 75, 85, 90];
-$uas        = [70, 80, 70, 90, 100];
-
-$totalBobot = 0;
-$totalSKS   = 0;
-
-echo "<section id='ipk'>";
-echo "<h2>Nilai Saya</h2>";
-
-for ($i = 0; $i < count($namaMatkul); $i++) {
-
-    $nilaiAkhir = (0.1 * $hadir[$i]) + (0.2 * $tugas[$i]) + (0.3 * $uts[$i]) + (0.4 * $uas[$i]);
-
-    if ($hadir[$i] < 70) {
-        $grade = "E";
-        $mutu = 0.00;
-    } elseif ($nilaiAkhir >= 90) {
-        $grade = "A";
-        $mutu = 4.00;
-    } elseif ($nilaiAkhir >= 80) {
-        $grade = "A-";
-        $mutu = 3.70;
-    } elseif ($nilaiAkhir >= 75) {
-        $grade = "B+";
-        $mutu = 3.30;
-    } elseif ($nilaiAkhir >= 70) {
-        $grade = "B";
-        $mutu = 3.00;
-    } elseif ($nilaiAkhir >= 65) {
-        $grade = "B-";
-        $mutu = 2.70;
-    } elseif ($nilaiAkhir >= 60) {
-        $grade = "C+";
-        $mutu = 2.30;
-    } elseif ($nilaiAkhir >= 55) {
-        $grade = "C";
-        $mutu = 2.00;
-    } elseif ($nilaiAkhir >= 50) {
-        $grade = "C-";
-        $mutu = 1.70;
-    } elseif ($nilaiAkhir >= 35) {
-        $grade = "D";
-        $mutu = 1.00;
-    } else {
-        $grade = "E";
-        $mutu = 0.00;
-    }
-
-    $status = in_array($grade, ["A", "A-", "B+", "B", "B-", "C+", "C", "C-"]) ? "LULUS" : "GAGAL";
-
-    $bobot = $mutu * $sks[$i];
-    $totalBobot += $bobot;
-    $totalSKS += $sks[$i];
-
-    echo "<h3>Nama Mata Kuliah ke-" . ($i + 1) . ": {$namaMatkul[$i]}</h3>";
-    echo "SKS: {$sks[$i]}<br>";
-    echo "Kehadiran: {$hadir[$i]}<br>";
-    echo "Tugas: {$tugas[$i]}<br>";
-    echo "UTS: {$uts[$i]}<br>";
-    echo "UAS: {$uas[$i]}<br>";
-    echo "Nilai Akhir: " . number_format($nilaiAkhir, 2) . "<br>";
-    echo "Grade: $grade<br>";
-    echo "Angka Mutu: " . number_format($mutu, 2) . "<br>";
-    echo "Bobot: " . number_format($bobot, 2) . "<br>";
-    echo "Status: $status<br><hr>";
-}
-
-
-$IPK = $totalBobot / $totalSKS;
-
-echo "<h3>Total Bobot = " . number_format($totalBobot, 2) . "</h3>";
-echo "<h3>Total SKS = $totalSKS</h3>";
-echo "<h3>IPK = " . number_format($IPK, 2) . "</h3>";
-echo "</section>";
+<?php
+session_start();
+require_once __DIR__ . '/fungsi.php';
 ?>
-       </section>
 
-    </main>
-    <footer>
-        <p>&copy;2025 Jason Leohandy Nim [2511500035]</p>
-    </footer>
+<!DOCTYPE html>
+<html lang="en">
 
-    <script src="script.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judul Halaman</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Ini Header</h1>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+      &#9776;
+    </button>
+    <nav>
+      <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Selamat Datang</h2>
+      <?php
+      echo "halo dunia!<br>";
+      echo "nama saya hadi";
+      ?>
+      <p>Ini contoh paragraf HTML.</p>
+    </section>
+
+    <section id="biodata">
+      <h2>Biodata Sederhana Mahasiswa</h2>
+      <form action="proses.php" method="POST">
+
+        <label for="txtNim"><span>NIM:</span>
+          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required>
+        </label>
+
+        <label for="txtNmLengkap"><span>Nama Lengkap:</span>
+          <input type="text" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" required>
+        </label>
+
+        <label for="txtT4Lhr"><span>Tempat Lahir:</span>
+          <input type="text" id="txtT4Lhr" name="txtT4Lhr" placeholder="Masukkan Tempat Lahir" required>
+        </label>
+
+        <label for="txtTglLhr"><span>Tanggal Lahir:</span>
+          <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required>
+        </label>
+
+        <label for="txtHobi"><span>Hobi:</span>
+          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required>
+        </label>
+
+        <label for="txtPasangan"><span>Pasangan:</span>
+          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required>
+        </label>
+
+        <label for="txtKerja"><span>Pekerjaan:</span>
+          <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan" required>
+        </label>
+
+        <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
+          <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua" required>
+        </label>
+
+        <label for="txtNmKakak"><span>Nama Kakak:</span>
+          <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" required>
+        </label>
+
+        <label for="txtNmAdik"><span>Nama Adik:</span>
+          <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required>
+        </label>
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+    </section>
+
+    <?php
+    $biodata = $_SESSION["biodata"] ?? [];
+
+    $fieldConfig = [
+      "nim" => ["label" => "NIM:", "suffix" => ""],
+      "nama" => ["label" => "Nama Lengkap:", "suffix" => " &#128526;"],
+      "tempat" => ["label" => "Tempat Lahir:", "suffix" => ""],
+      "tanggal" => ["label" => "Tanggal Lahir:", "suffix" => ""],
+      "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
+      "pasangan" => ["label" => "Pasangan:", "suffix" => " &hearts;"],
+      "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
+      "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
+      "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
+      "adik" => ["label" => "Nama Adik:", "suffix" => ""],
+    ];
+    ?>
+
+    <section id="about">
+      <h2>Tentang Saya</h2>
+      <?= tampilkanBiodata($fieldConfig, $biodata) ?>
+    </section>
+
+    <section id="contact">
+      <h2>Kontak Kami</h2>
+      <form action="proses.php" method="POST">
+
+        <label for="txtNama"><span>Nama:</span>
+          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
+        </label>
+
+        <label for="txtEmail"><span>Email:</span>
+          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+        </label>
+
+        <label for="txtPesan"><span>Pesan Anda:</span>
+          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+          <small id="charCount">0/200 karakter</small>
+        </label>
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+
+      <?php
+      $contact = $_SESSION["contact"] ?? [];
+
+      $fieldContact = [
+        "nama" => ["label" => "Nama:", "suffix" => ""],
+        "email" => ["label" => "Email:", "suffix" => ""],
+        "pesan" => ["label" => "Pesan Anda:", "suffix" => ""]
+      ];
+      ?>
+
+      <br>
+      <hr>
+      <h2>Yang menghubungi kami</h2>
+      <?= tampilkanBiodata($fieldContact, $contact) ?>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-</hmtl>
+
+</html>
