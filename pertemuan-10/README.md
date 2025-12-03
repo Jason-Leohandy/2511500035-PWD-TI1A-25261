@@ -12,4 +12,6 @@ Hari ini, Rabu 3 Dsemeber 2025, saya mempelajari:
 <li>membuat data base di PHPMYADMIN</li>
 <li>Membuat query pada database bernama tbl_tamu</li>
 <li>Membuat file baru yaitu read.php dengan kode fungsi php di dalamnya</li>
+<li>Menambahkan value pada phpmyadmin</li>
+<li>meengcopy dan mengubah file read.php menjadi read.inc.php</li>
 </ol>
