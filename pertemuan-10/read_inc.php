@@ -2,7 +2,7 @@
 require 'koneksi.php';
 
 $fieldcontact = [
-      "name" => ["label" => "Nama:", "suffix" => ""],
+      "nama" => ["label" => "Nama:", "suffix" => ""],
       "email" => ["label" => "Email:", "suffix" => ""],
       "pesan" => ["label" => "Pesan:", "suffix" => ""],
     ];
