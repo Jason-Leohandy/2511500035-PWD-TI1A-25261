@@ -141,15 +141,6 @@ require_once __DIR__ . '/fungsi.php';
       <?php endif; ?>
     </section>
 
-    <?php
-    $pengguna = $_SESSION["pengguna"] ?? [];
-
-    $userConfig = [
-      "name" => ["label" => "Nama:", "suffix" => ""],
-      "email" => ["label" => "Email:", "suffix" => ""],
-      "pesan" => ["label" => "Pesan:", "suffix" => ""],
-    ];
-    ?>
 
     <section id="kontak">
       <h2>Yang Menghubungi Kami</h2>
