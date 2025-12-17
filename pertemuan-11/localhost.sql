@@ -4,8 +4,8 @@
 --
 -- Host: localhost:3306
 -- Generation Time: Dec 03, 2025 at 05:35 AM
--- Server version: 5.7.33
--- PHP Version: 7.4.19
+-- Server version: 8.4.3
+-- PHP Version: 8.3.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_pwd2025`
 --
-CREATE DATABASE IF NOT EXISTS `db_pwd2025` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `db_pwd2025` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 USE `db_pwd2025`;
 
 -- --------------------------------------------------------
@@ -30,20 +30,18 @@ USE `db_pwd2025`;
 --
 
 CREATE TABLE `tbl_tamu` (
-  `cid` int(11) NOT NULL,
+  `cid` int NOT NULL,
   `cnama` varchar(100) DEFAULT NULL,
   `cemail` varchar(100) DEFAULT NULL,
   `cpesan` text
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_tamu`
 --
 
 INSERT INTO `tbl_tamu` (`cid`, `cnama`, `cemail`, `cpesan`) VALUES
-(1, 'Jason Leohandy', 'jasonleohandy33@gmail.com', 'ayo main magic chess'),
-(2, 'Pitak', 'palapitak@gmail.com', 'aku cupu magi chess'),
-(3, 'ROk', 'ROki@gmail.com', 'nama ku ROKI');
+(1, 'Fajar Agus Setiawan', 'Fajardoang123@gmail.com', 'tetap menyerah, jangan semangat.\r\nusaha mengkhianati hasil');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +61,7 @@ ALTER TABLE `tbl_tamu`
 -- AUTO_INCREMENT for table `tbl_tamu`
 --
 ALTER TABLE `tbl_tamu`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
