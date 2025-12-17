@@ -6,7 +6,7 @@ $q = mysqli_query($conn, $sql);
 ?>
 <table border="1" cellpadding="8" cellspacing="0">
     <tr>
-        <th>ID</th>
+        <th>No</th>
         <th>Aksi</th>
         <th>ID</th>
         <th>Nama</th>
@@ -14,7 +14,7 @@ $q = mysqli_query($conn, $sql);
         <th>Pesan</th>
         <th>Created At</th>
     </tr>
-    
+    <?php $i - 1; ?>
     <?php while ($row = mysqli_fetch_assoc($q)): ?>
         <tr>
             <td><?= $i++ ?></td>
