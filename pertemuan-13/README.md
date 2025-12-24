@@ -10,4 +10,5 @@ Hari ini, Rabu 24 Desember 2025, saya mempelajari:
 <li>menambah link delete untuk ke file proses_delete.php</li>
 <li>menambah file baru yaitu proses_delete.php</li>
 <li>mengcopy semua kode dari proses_update.php ke proses_delete.php</li>
+<li>menyesuaikan kode dari update menjadi kdoe untuk delete</li>
 </ol>
