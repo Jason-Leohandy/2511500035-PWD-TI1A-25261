@@ -13,4 +13,5 @@ Hari ini, Rabu 24 Desember 2025, saya mempelajari:
 <li>menyesuaikan kode dari update menjadi kdoe untuk delete</li>
 <li>menambahkan parameter cid untuk link delete di read.php</li>
 <li>memperbaiki file proses_delete.php agar bisa menggunakan parameter cid</li>
+<li>menambah kode untuk mengkonfirmasi sebelum delete</li>
 </ol>
