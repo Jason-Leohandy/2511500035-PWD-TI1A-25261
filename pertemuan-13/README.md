@@ -11,4 +11,6 @@ Hari ini, Rabu 24 Desember 2025, saya mempelajari:
 <li>menambah file baru yaitu proses_delete.php</li>
 <li>mengcopy semua kode dari proses_update.php ke proses_delete.php</li>
 <li>menyesuaikan kode dari update menjadi kdoe untuk delete</li>
+<li>menambahkan parameter cid untuk link delete di read.php</li>
+<li>memperbaiki file proses_delete.php agar bisa menggunakan parameter cid</li>
 </ol>
