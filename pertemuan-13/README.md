@@ -7,6 +7,7 @@ Hari ini, Rabu 24 Desember 2025, saya mempelajari:
 <ol>
 <li>copy bahan ajar milik dosen di e-learning</li>
 <li>import sql bahan praktikum pertemuan 13</li>
-<li></li>
-<li></li>
+<li>menambah link delete untuk ke file proses_delete.php</li>
+<li>menambah file baru yaitu proses_delete.php</li>
+<li>mengcopy semua kode dari proses_update.php ke proses_delete.php</li>
 </ol>
