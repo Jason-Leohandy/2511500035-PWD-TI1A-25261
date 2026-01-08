@@ -102,21 +102,21 @@ if (!empty($errors)) {
 }
 
 #menyiapkan query INSERT dengan prepared statement
-$sql = "INSERT INTO tbl_guest (cnim, cnama, ctgllahir, ctempatlahir, chobi, cpasangan, cpekerjaan, cortu, ckakak, cadik) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?.)";
+$sql = "INSERT INTO tbl_pengunjung (cnim, cnama, ctempat, ctanggal, chobi, cpasangan, cpekerjaan, cortu, ckakak, cadik) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?.)";
 $stmt = mysqli_prepare($conn, $sql);
 
 if (!$stmt) {
   #jika gagal prepare, kirim pesan error ke pengguna (tanpa detail sensitif)
   $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
-  redirect_ke('index.php#contact');
+  redirect_ke('index.php');
 }
 #bind parameter dan eksekusi (s = string)
-mysqli_stmt_bind_param($stmt, "sss", $nim, $nama, $tempat,$tanggal, $hobi, $pasangan, $pekerjaan, $pekerjaan, $ortu, $kakak, $adik);
+mysqli_stmt_bind_param($stmt, "ssssssssss", $nim, $nama, $tempat,$tanggal, $hobi, $pasangan, $pekerjaan, $ortu, $kakak, $adik);
 
 if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesan sukses
   unset($_SESSION['old']);
   $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah tersimpan.';
-  redirect_ke('index.php#contact'); #pola PRG: kembali ke form / halaman home
+  redirect_ke('index.php'); #pola PRG: kembali ke form / halaman home
 } else { #jika gagal, simpan kembali old value dan tampilkan error umum
   $_SESSION['old'] = [
    'nim'   => $nim,
@@ -131,7 +131,7 @@ if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesa
     'Nama Adik'   => $adik,
   ];
   $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';
-  redirect_ke('index.php#contact');
+  redirect_ke('index.php');
 }
 #tutup statement
 mysqli_stmt_close($stmt);
@@ -151,4 +151,4 @@ $arrBiodata = [
 $_SESSION["biodata"] = $arrBiodata;
 
 
-header("location: index.php#about");
+header("location: index.php");
