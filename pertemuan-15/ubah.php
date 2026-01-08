@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require 'connection.php';
+  require 'koneksi.php';
   require 'fungsi.php';
 
   /*
@@ -38,8 +38,8 @@
     Ambil data lama dari DB menggunakan prepared statement, 
     jika ada kesalahan, tampilkan penanda error.
   */
-  $stmt = mysqli_prepare($conn, "SELECT cid, cnim,cnama,ctgllahir, ctempatlahir,chobi, cpasangan, cpekerjaan, cortu, ckakak,cadik
-                                    FROM tbl_guest WHERE cid = ? LIMIT 1");
+  $stmt = mysqli_prepare($conn, "SELECT cid, cnim,cnama,ctempat, ctanggal,chobi, cpasangan, cpekerjaan, cortu, ckakak,cadik
+                                    FROM tbl_pengunjung WHERE cid = ? LIMIT 1");
   if (!$stmt) {
     $_SESSION['flash_error'] = 'Query tidak benar.';
     redirect_ke('baca.php');
@@ -53,14 +53,14 @@
 
   if (!$row) {
     $_SESSION['flash_error'] = 'Record tidak ditemukan.';
-    redirect_ke('read.php');
+    redirect_ke('baca.php');
   }
 
   #Nilai awal (prefill form)
   $nim = $row['cnim'] ?? '';
   $nama  = $row['cnama'] ?? '';
-  $tempat = $row['ctgllahir'] ?? '';
-  $tanggal = $row['ctempatlahir'] ?? '';
+  $tempat = $row['ctempat'] ?? '';
+  $tanggal = $row['ctanggal'] ?? '';
   $hobi = $row['chobi'] ?? '';
   $pasangan = $row['cpasangan'] ?? '';
   $pekerjaan = $row['cpekerjaan'] ?? '';
@@ -110,46 +110,89 @@
     </header>
 
     <main>
-      <section id="contact">
-        <h2>Edit Buku Tamu</h2>
-        <?php if (!empty($flash_error)): ?>
-          <div style="padding:10px; margin-bottom:10px; 
-            background:#f8d7da; color:#721c24; border-radius:6px;">
-            <?= $flash_error; ?>
-          </div>
-        <?php endif; ?>
-        <form action="proses_update.php" method="POST">
+      <section id="biodata">
+      <h2>Biodata Sederhana Mahasiswa</h2>
 
-          <input type="text" name="cid" value="<?= (int)$cid; ?>">
+       <?php if (!empty($flash_sukses)): ?>
+        <div style="padding:10px; margin-bottom:10px; background:#d4edda; color:#155724; border-radius:6px;">
+          <?= $flash_sukses; ?>
+        </div>
+      <?php endif; ?>
 
-          <label for="txtNama"><span>Nama:</span>
-            <input type="text" id="txtNama" name="txtNamaEd" 
-              placeholder="Masukkan nama" required autocomplete="name"
-              value="<?= !empty($nama) ? $nama : '' ?>">
-          </label>
+      <?php if (!empty($flash_error)): ?>
+        <div style="padding:10px; margin-bottom:10px; background:#f8d7da; color:#721c24; border-radius:6px;">
+          <?= $flash_error; ?>
+        </div>
+      <?php endif; ?>
 
-          <label for="txtEmail"><span>Email:</span>
-            <input type="email" id="txtEmail" name="txtEmailEd" 
-              placeholder="Masukkan email" required autocomplete="email"
-              value="<?= !empty($email) ? $email : '' ?>">
-          </label>
+      <form action="process.php" method="POST">
 
-          <label for="txtPesan"><span>Pesan Anda:</span>
-            <textarea id="txtPesan" name="txtPesanEd" rows="4" 
-              placeholder="Tulis pesan anda..." 
-              required><?= !empty($pesan) ? $pesan : '' ?></textarea>
-          </label>
+        <label for="txtNim"><span>NIM:</span>
+          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" 
+          required autocomplete= "nim"
+          value="<?= isset($old['nim']) ? htmlspecialchars($old['nim']) : '' ?>">
+        </label>
 
-          <label for="txtCaptcha"><span>Captcha 2 x 3 = ?</span>
-            <input type="number" id="txtCaptcha" name="txtCaptcha" 
-              placeholder="Jawab Pertanyaan..." required>
-          </label>
+        <label for="txtNmLengkap"><span>Nama Lengkap:</span>
+          <input type="text" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" 
+          required autocomplete= "nama" 
+           value="<?= isset($old['nama']) ? htmlspecialchars($old['nama']) : '' ?>">
+        </label>
 
-          <button type="submit">Kirim</button>
-          <button type="reset">Batal</button>
-          <a href="read.php" class="reset">Kembali</a>
-        </form>
-      </section>
+        <label for="txtT4Lhr"><span>Tempat Lahir:</span>
+          <input type="text" id="txtT4Lhr" name="txtT4Lhr" placeholder="Masukkan Tempat Lahir" 
+          required autocomplete="tempat"
+           value="<?= isset($old['tempat']) ? htmlspecialchars($old['tempat']) : '' ?>">
+        </label>
+
+        <label for="txtTglLhr"><span>Tanggal Lahir:</span>
+          <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" 
+          required autocomplete="tanggal"
+           value="<?= isset($old['tanggal']) ? htmlspecialchars($old['tanggal']) : '' ?>">
+        </label>
+
+        <label for="txtHobi"><span>Hobi:</span>
+          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" 
+          required autocomplete="hobi"
+           value="<?= isset($old['hobi']) ? htmlspecialchars($old['hobi']) : '' ?>">
+        </label>
+
+        <label for="txtPasangan"><span>Pasangan:</span>
+          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" 
+          required autocomplete ="pasangan"
+           value="<?= isset($old['pasangan']) ? htmlspecialchars($old['pasangan']) : '' ?>">>
+        </label>
+
+        <label for="txtKerja"><span>Pekerjaan:</span>
+          <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan" 
+          required autocomplete="pekerjaan"
+           value="<?= isset($old['pekerjaan']) ? htmlspecialchars($old['pekerjaan']) : '' ?>">>
+        </label>
+
+        <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
+          <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua" 
+          required autocomplete="ortu"
+           value="<?= isset($old['ortu']) ? htmlspecialchars($old['ortu']) : '' ?>">>
+        </label>
+
+        <label for="txtNmKakak"><span>Nama Kakak:</span>
+          <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" 
+          required autocomplete="kakak"
+           value="<?= isset($old['kakak']) ? htmlspecialchars($old['kakak']) : '' ?>">>
+        </label>
+
+        <label for="txtNmAdik"><span>Nama Adik:</span>
+          <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" 
+          required autocomplete
+           value="<?= isset($old['adik']) ? htmlspecialchars($old['adik']) : '' ?>">>
+        </label>
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+    </section>
+
+
     </main>
 
     <script src="script.js"></script>
