@@ -1,6 +1,6 @@
 <?php
 session_start();
-require __DIR__ . './connection.php';
+require __DIR__ . './koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
 #cek method form, hanya izinkan POST
@@ -94,7 +94,7 @@ if (!empty($errors)) {
     'Nama Orang Tua'   => $ortu,
     'Nama kakak'   => $kakak,
     'Nama Adik'   => $adik,
-    'captcha' => $captcha,
+    'captcha' => $captcha
   ];
 
   $_SESSION['flash_error'] = implode('<br>', $errors);
@@ -129,7 +129,6 @@ if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesa
     'Nama Orang Tua'   => $ortu,
     'Nama kakak'   => $kakak,
     'Nama Adik'   => $adik,
-    'captcha' => $captcha,
   ];
   $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';
   redirect_ke('index.php#contact');
@@ -150,10 +149,6 @@ $arrBiodata = [
   "adik" => $_POST["txtNmAdik"] ?? ""
 ];
 $_SESSION["biodata"] = $arrBiodata;
-
-
-
-
 
 
 header("location: index.php#about");
