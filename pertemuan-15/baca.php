@@ -1,9 +1,9 @@
 <?php
   session_start();
-  require 'connection.php';
+  require 'koneksi.php';
   require 'fungsi.php';
 
-  $sql = "SELECT * FROM tbl_guest ORDER BY cid DESC";
+  $sql = "SELECT * FROM tbl_pengunjung ORDER BY cid DESC";
   $q = mysqli_query($conn, $sql);
   if (!$q) {
     die("Query error: " . mysqli_error($conn));
@@ -54,13 +54,13 @@
       <td><?= $i++ ?></td>
       <td>
         <a href="ubah.php?cid=<?= (int)$row['cid']; ?>">Edit</a>
-        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['cnama']); ?>?')" href="proses_delete.php?cid=<?= (int)$row['cid']; ?>">Delete</a>
+        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['cnama']); ?>?')" href="proses_delete copy.php?cid=<?= (int)$row['cid']; ?>">Delete</a>
       </td>
       <td><?= $row['cid']; ?></td>
       <td><?= htmlspecialchars($row['cnim']); ?></td>
       <td><?= htmlspecialchars($row['cnama']); ?></td>
-      <td><?= htmlspecialchars($row['ctgllahir']); ?></td>
-      <td><?= htmlspecialchars($row['ctempatlahir']); ?></td>
+      <td><?= htmlspecialchars($row['ctempat']); ?></td>
+      <td><?= htmlspecialchars($row['ctanggal']); ?></td>
       <td><?= htmlspecialchars($row['chobi']); ?></td>
       <td><?= htmlspecialchars($row['cpasangan']); ?></td>
       <td><?= htmlspecialchars($row['cpekerjaan']); ?></td>

@@ -1,112 +1,139 @@
 <?php
-  session_start();
-  require __DIR__ . '/koneksi.php';
-  require_once __DIR__ . '/fungsi.php';
+session_start();
+require __DIR__ . './koneksi.php';
+require_once __DIR__ . '/fungsi.php';
 
-  #cek method form, hanya izinkan POST
-  if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    $_SESSION['flash_error'] = 'Akses tidak valid.';
-    redirect_ke('read.php');
-  }
+#cek method form, hanya izinkan POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+  $_SESSION['flash_error'] = 'Akses tidak valid.';
+  redirect_ke('index.php#contact');
+}
 
-  #validasi cid wajib angka dan > 0
-  $cid = filter_input(INPUT_POST, 'cid', FILTER_VALIDATE_INT, [
-    'options' => ['min_range' => 1]
-  ]);
+#ambil dan bersihkan nilai dari form
+$nim       = bersihkan($_POST['txtNim']  ?? '');
+$nama      = bersihkan($_POST['txtNmLengkap'] ?? '');
+$tempat    = bersihkan($_POST['txtT4Lhr'] ?? '');
+$tanggal   = bersihkan($_POST['txtTgllhr'] ?? '');
+$hobi      = bersihkan($_POST['txtHobi'] ?? '');
+$pasangan  = bersihkan($_POST['txtPasangan'] ?? '');
+$pekerjaan = bersihkan($_POST['txtKerja'] ?? '');
+$ortu      = bersihkan($_POST['txtNmOrtu'] ?? '');
+$kakak     = bersihkan($_POST['txtNmKakak'] ?? '');
+$adik      = bersihkan($_POST['txtNmAdik'] ?? '');
+$captcha   = bersihkan($_POST['txtCaptcha'] ?? '');
 
-  if (!$cid) {
-    $_SESSION['flash_error'] = 'CID Tidak Valid.';
-    redirect_ke('edit.php?cid='. (int)$cid);
-  }
+#Validasi sederhana
+$errors = []; #ini array untuk menampung semua error yang ada
 
-  #ambil dan bersihkan (sanitasi) nilai dari form
-  $nama  = bersihkan($_POST['txtNamaEd']  ?? '');
-  $email = bersihkan($_POST['txtEmailEd'] ?? '');
-  $pesan = bersihkan($_POST['txtPesanEd'] ?? '');
-  $captcha = bersihkan($_POST['txtCaptcha'] ?? '');
+if ($nim= '') {
+  $errors[] = 'Nim Wajib Diisi.';
+}
 
-  #Validasi sederhana
-  $errors = []; #ini array untuk menampung semua error yang ada
+if ($nama === '') {
+  $errors[] = 'Nama wajib diisi.';
+}
 
-  if ($nama === '') {
-    $errors[] = 'Nama wajib diisi.';
-  }
+if ($tempat === '') {
+  $errors[] = 'Tempat lahir wajib diisi.';
+}
 
-  if ($email === '') {
-    $errors[] = 'Email wajib diisi.';
-  } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = 'Format e-mail tidak valid.';
-  }
 
-  if ($pesan === '') {
-    $errors[] = 'Pesan wajib diisi.';
-  }
+if ($tanggal  === '') {
+  $errors[] = 'Tanggal lahir wajib diisi.';
+}
 
-  if ($captcha === '') {
-    $errors[] = 'Pertanyaan wajib diisi.';
-  }
+if ($hobi === '') {
+  $errors[] = 'Hobi wajib diisi.';
+}
 
-  if (mb_strlen($nama) < 3) {
-    $errors[] = 'Nama minimal 3 karakter.';
-  }
+if ($pasangan === '') {
+  $errors[] = 'Pasangan wajib diisi.';
+}
 
-  if (mb_strlen($pesan) < 10) {
-    $errors[] = 'Pesan minimal 10 karakter.';
-  }
+if ($pekerjaan === '') {
+  $errors[] = 'pekerjaan wajib diisi wajib diisi.';
+}
 
-  if ($captcha!=="6") {
-    $errors[] = 'Jawaban '. $captcha.' captcha salah.';
-  }
+if ($ortu === '') {
+  $errors[] = 'Nama ortu wajib diisi.';
+}
 
-  /*
-  kondisi di bawah ini hanya dikerjakan jika ada error, 
-  simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
-  */
-  if (!empty($errors)) {
-    $_SESSION['old'] = [
-      'nama'  => $nama,
-      'email' => $email,
-      'pesan' => $pesan
-    ];
+if ($kakak === '') {
+  $errors[] = 'Nama kakak wajib diisi.';
+} 
 
-    $_SESSION['flash_error'] = implode('<br>', $errors);
-    redirect_ke('edit.php?cid='. (int)$cid);
-  }
+if ($adik === '') {
+  $errors[] = 'Nama adik wajib diisi.';
+} 
 
-  /*
-    Prepared statement untuk anti SQL injection.
-    menyiapkan query UPDATE dengan prepared statement 
-    (WAJIB WHERE cid = ?)
-  */
-  $stmt = mysqli_prepare($conn, "UPDATE tbl_tamu 
-                                SET cnama = ?, cemail = ?, cpesan = ? 
+if ($captcha === '') {
+  $errors[] = 'Pertanyaan wajib diisi.';
+}
+
+if (mb_strlen($nama) < 3) {
+  $errors[] = 'Nama minimal 3 karakter.';
+}
+
+if ($captcha!=="5") {
+  $errors[] = 'Jawaban '. $captcha.' captcha salah.';
+}
+
+/*
+kondisi di bawah ini hanya dikerjakan jika ada error, 
+simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
+*/
+if (!empty($errors)) {
+  $_SESSION['old'] = [
+    'nim'   => $nim,
+    'nama'  => $nama,
+    'Tempat lahir' => $tempat,
+    'Tanggal lahir' => $tanggal,
+    'Hobi'   => $hobi,
+    'Pasangan'   => $pasangan,
+    'Pekerjaan'   => $pekerjaan,
+    'Nama Orang Tua'   => $ortu,
+    'Nama kakak'   => $kakak,
+    'Nama Adik'   => $adik,
+    'captcha' => $captcha
+  ];
+
+  $_SESSION['flash_error'] = implode('<br>', $errors);
+  redirect_ke('index.php#contact');
+}
+
+ $stmt = mysqli_prepare($conn, "UPDATE tbl_pengunjung
+                                SET cnim = ?, cnama= ?, ctempat=?, ctanggal=?, chobi=?, cpasangan=?, cpekerjaan=?, cortu=?, ckakak=?, cadik=?
                                 WHERE cid = ?");
-  if (!$stmt) {
-    #jika gagal prepare, kirim pesan error (tanpa detail sensitif)
-    $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
-    redirect_ke('edit.php?cid='. (int)$cid);
-  }
 
-  #bind parameter dan eksekusi (s = string, i = integer)
-  mysqli_stmt_bind_param($stmt, "sssi", $nama, $email, $pesan, $cid);
+if (!$stmt) {
+  #jika gagal prepare, kirim pesan error ke pengguna (tanpa detail sensitif)
+  $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
+  redirect_ke('baca.php');
+}
+#bind parameter dan eksekusi (s = string)
+mysqli_stmt_bind_param($stmt, "ssssssssssi", $nim, $nama, $tempat,$tanggal, $hobi, $pasangan, $pekerjaan, $ortu, $kakak, $adik,$cid);
 
-  if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value
-    unset($_SESSION['old']);
-    /*
-      Redirect balik ke read.php dan tampilkan info sukses.
-    */
-    $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah diperbaharui.';
-    redirect_ke('read.php'); #pola PRG: kembali ke data dan exit()
-  } else { #jika gagal, simpan kembali old value dan tampilkan error umum
-    $_SESSION['old'] = [
-      'nama'  => $nama,
-      'email' => $email,
-      'pesan' => $pesan,
-    ];
-    $_SESSION['flash_error'] = 'Data gagal diperbaharui. Silakan coba lagi.';
-    redirect_ke('edit.php?cid='. (int)$cid);
-  }
-  #tutup statement
-  mysqli_stmt_close($stmt);
+if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesan sukses
+  unset($_SESSION['old']);
+  $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah tersimpan.';
+  redirect_ke('baca.php'); #pola PRG: kembali ke form / halaman home
+} else { #jika gagal, simpan kembali old value dan tampilkan error umum
+  $_SESSION['old'] = [
+    'nim'   => $nim,
+    'nama'  => $nama,
+    'tempat' => $tempat,
+    'tanggal' => $tanggal,
+    'hobi'   => $hobi,
+    'pasangan'   => $pasangan,
+    'pekerjaan'   => $pekerjaan,
+    'ortu'   => $ortu,
+    'kakak'   => $kakak,
+    'adik'   => $adik,
+  ];
+  $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';
+  redirect_ke('index.php');
+}
+#tutup statement
+mysqli_stmt_close($stmt);
 
-  redirect_ke('edit.php?cid='. (int)$cid);
+redirect_ke('ubah.php?cid='. (int)$cid);
