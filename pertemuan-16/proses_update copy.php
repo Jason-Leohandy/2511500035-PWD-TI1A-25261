@@ -34,47 +34,67 @@ $bidang    = bersihkan($_POST['txtbidang'] ?? '');
   #Validasi sederhana
   $errors = []; #ini array untuk menampung semua error yang ada
 
-  if ($nama === '') {
-    $errors[] = 'Nama wajib diisi.';
-  }
 
-  if ($email === '') {
-    $errors[] = 'Email wajib diisi.';
-  } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = 'Format e-mail tidak valid.';
-  }
+if ($kode === '') {
+  $errors[] = 'kode wajib diisi.';
+}
 
-  if ($pesan === '') {
-    $errors[] = 'Pesan wajib diisi.';
-  }
+if ($nama === '') {
+  $errors[] = 'Nama wajib diisi.';
+}
 
-  if ($captcha === '') {
-    $errors[] = 'Pertanyaan wajib diisi.';
-  }
+if ($alamat === '') {
+  $errors[] = 'alamat wajib diisi.';
+}
 
-  if (mb_strlen($nama) < 3) {
-    $errors[] = 'Nama minimal 3 karakter.';
-  }
+if ($tanggal === '') {
+  $errors[] = 'tanggal wajib diisi.';
+}
 
-  if (mb_strlen($pesan) < 10) {
-    $errors[] = 'Pesan minimal 10 karakter.';
-  }
+if ($JJA === '') {
+  $errors[] = 'wajib diisi.';
+}
 
-  if ($captcha!=="6") {
-    $errors[] = 'Jawaban '. $captcha.' captcha salah.';
-  }
+if ($prodi === '') {
+  $errors[] = 'prodi wajib diisi.';
+}
 
+if ($noHP === '') {
+  $errors[] = 'No HP wajib diisi.';
+}
+
+if ($pasangan === '') {
+  $errors[] = 'Nama Pasangan wajib diisi.';
+}
+
+if ($anak === '') {
+  $errors[] = 'Nama Anak wajib diisi.';
+}
+
+if ($bidang === '') {
+  $errors[] = 'Bidang wajib diisi.';
+}
+
+if (mb_strlen($nama) < 3) {
+  $errors[] = 'Nama minimal 3 karakter.';
+}
   /*
   kondisi di bawah ini hanya dikerjakan jika ada error, 
   simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
   */
   if (!empty($errors)) {
-    $_SESSION['old'] = [
-      'nama'  => $nama,
-      'email' => $email,
-      'pesan' => $pesan
-    ];
-
+     $_SESSION['old'] = [
+    'Kode'    => $kode,
+    'Nama'    => $nama,
+    'Alamat'  => $alamat,
+    'Tanggal' => $tanggal,
+    'JJA'     => $JJA,
+    'Prodi'   => $prodi,
+    'noHP'    => $noHP,
+    'pasangan'=> $pasangan,
+    'anak'    => $anak,
+    'bidang'  => $bidang,
+  ];
     $_SESSION['flash_error'] = implode('<br>', $errors);
     redirect_ke('edit.php?cid='. (int)$cid);
   }
@@ -84,8 +104,8 @@ $bidang    = bersihkan($_POST['txtbidang'] ?? '');
     menyiapkan query UPDATE dengan prepared statement 
     (WAJIB WHERE cid = ?)
   */
-  $stmt = mysqli_prepare($conn, "UPDATE tbl_tamu 
-                                SET cnama = ?, cemail = ?, cpesan = ? 
+  $stmt = mysqli_prepare($conn, "UPDATE tbl_dosen 
+                                SET ckode = ?, cnama = ?, calmt = ? , ctgl = ?, cJJA = ?, chb = ?, chp = ?, cpasangan = ?, canak = ?, cbidang = ?
                                 WHERE cid = ?");
   if (!$stmt) {
     #jika gagal prepare, kirim pesan error (tanpa detail sensitif)
