@@ -114,7 +114,7 @@ if (mb_strlen($nama) < 3) {
   }
 
   #bind parameter dan eksekusi (s = string, i = integer)
-  mysqli_stmt_bind_param($stmt, "sssi", $nama, $email, $pesan, $cid);
+  mysqli_stmt_bind_param($stmt, "sssisssssss", $kode, $nama, $alamat, $cid, $tanggal, $JJA, $prodi, $noHP, $pasangan, $anak, $bidang);
 
   if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value
     unset($_SESSION['old']);
