@@ -74,10 +74,16 @@ simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
 */
 if (!empty($errors)) {
   $_SESSION['old'] = [
-    'nama'  => $nama,
-    'email' => $email,
-    'pesan' => $pesan,
-    'captcha' => $captcha,
+    'Kode'    => $kode,
+    'Nama'    => $nama,
+    'Alamat'  => $alamat,
+    'Tanggal' => $tanggal,
+    'JJA'     => $JJA,
+    'Prodi'   => $prodi,
+    'noHP'    => $noHP,
+    'pasangan'=> $pasangan,
+    'anak'    => $anak,
+    'bidang'  => $bidang,
   ];
 
   $_SESSION['flash_error'] = implode('<br>', $errors);
@@ -85,7 +91,7 @@ if (!empty($errors)) {
 }
 
 #menyiapkan query INSERT dengan prepared statement
-$sql = "INSERT INTO tbl_tamu (cnama, cemail, cpesan) VALUES (?, ?, ?)";
+$sql = "INSERT INTO tbl_dosen (ckode, cnama, calmt, ctgl, cjja, chb, chp, pasangan, canak, cbidang) VALUES (?, ?, ?, ?, ?, ? ,?, ?, ?, ?)";
 $stmt = mysqli_prepare($conn, $sql);
 
 if (!$stmt) {
@@ -94,7 +100,7 @@ if (!$stmt) {
   redirect_ke('index.php#contact');
 }
 #bind parameter dan eksekusi (s = string)
-mysqli_stmt_bind_param($stmt, "sss", $nama, $email, $pesan);
+mysqli_stmt_bind_param($stmt, "ssssssssss",$kode, $nama, $alamat, $tanggal, $JJA, $prodi, $noHP, $pasangan, $anak, $bidang);
 
 if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesan sukses
   unset($_SESSION['old']);
@@ -102,10 +108,16 @@ if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesa
   redirect_ke('index.php#contact'); #pola PRG: kembali ke form / halaman home
 } else { #jika gagal, simpan kembali old value dan tampilkan error umum
   $_SESSION['old'] = [
-    'nama'  => $nama,
-    'email' => $email,
-    'pesan' => $pesan,
-    'captcha' => $captcha,
+    'Kode'    => $kode,
+    'Nama'    => $nama,
+    'Alamat'  => $alamat,
+    'Tanggal' => $tanggal,
+    'JJA'     => $JJA,
+    'Prodi'   => $prodi,
+    'noHP'    => $noHP,
+    'pasangan'=> $pasangan,
+    'anak'    => $anak,
+    'bidang'  => $bidang,
   ];
   $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';
   redirect_ke('index.php#contact');
@@ -127,4 +139,4 @@ $arrBiodata = [
 ];
 $_SESSION["biodata"] = $arrBiodata;
 
-header("location: index.php#about");
+header("location: index.php#biodata");
