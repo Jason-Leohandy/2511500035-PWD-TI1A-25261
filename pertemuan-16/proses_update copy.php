@@ -124,11 +124,18 @@ if (mb_strlen($nama) < 3) {
     $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah diperbaharui.';
     redirect_ke('read.php'); #pola PRG: kembali ke data dan exit()
   } else { #jika gagal, simpan kembali old value dan tampilkan error umum
-    $_SESSION['old'] = [
-      'nama'  => $nama,
-      'email' => $email,
-      'pesan' => $pesan,
-    ];
+   $_SESSION['old'] = [
+    'Kode'    => $kode,
+    'Nama'    => $nama,
+    'Alamat'  => $alamat,
+    'Tanggal' => $tanggal,
+    'JJA'     => $JJA,
+    'Prodi'   => $prodi,
+    'noHP'    => $noHP,
+    'pasangan'=> $pasangan,
+    'anak'    => $anak,
+    'bidang'  => $bidang,
+  ];
     $_SESSION['flash_error'] = 'Data gagal diperbaharui. Silakan coba lagi.';
     redirect_ke('edit.php?cid='. (int)$cid);
   }
