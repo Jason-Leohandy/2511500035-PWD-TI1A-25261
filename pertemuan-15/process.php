@@ -6,7 +6,7 @@ require_once __DIR__ . '/fungsi.php';
 #cek method form, hanya izinkan POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   $_SESSION['flash_error'] = 'Akses tidak valid.';
-  redirect_ke('index.php#contact');
+  redirect_ke('index.php#biodata');
 }
 
 #ambil dan bersihkan nilai dari form
@@ -20,7 +20,7 @@ $pekerjaan = bersihkan($_POST['txtKerja'] ?? '');
 $ortu      = bersihkan($_POST['txtNmOrtu'] ?? '');
 $kakak     = bersihkan($_POST['txtNmKakak'] ?? '');
 $adik      = bersihkan($_POST['txtNmAdik'] ?? '');
-$captcha   = bersihkan($_POST['txtCaptcha'] ?? '');
+  
 
 #Validasi sederhana
 $errors = []; #ini array untuk menampung semua error yang ada
@@ -66,17 +66,7 @@ if ($adik === '') {
   $errors[] = 'Nama adik wajib diisi.';
 } 
 
-if ($captcha === '') {
-  $errors[] = 'Pertanyaan wajib diisi.';
-}
 
-if (mb_strlen($nama) < 3) {
-  $errors[] = 'Nama minimal 3 karakter.';
-}
-
-if ($captcha!=="5") {
-  $errors[] = 'Jawaban '. $captcha.' captcha salah.';
-}
 
 /*
 kondisi di bawah ini hanya dikerjakan jika ada error, 
@@ -92,13 +82,13 @@ if (!empty($errors)) {
     'Pasangan'   => $pasangan,
     'Pekerjaan'   => $pekerjaan,
     'Nama Orang Tua'   => $ortu,
-    'Nama kakak'   => $kakak,
+    'Nama kakak'   => $kakak, 
     'Nama Adik'   => $adik,
     'captcha' => $captcha
   ];
 
   $_SESSION['flash_error'] = implode('<br>', $errors);
-  redirect_ke('index.php#contact');
+  redirect_ke('index.php#biodata');
 }
 
 #menyiapkan query INSERT dengan prepared statement
@@ -119,16 +109,16 @@ if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value, beri pesa
   redirect_ke('index.php'); #pola PRG: kembali ke form / halaman home
 } else { #jika gagal, simpan kembali old value dan tampilkan error umum
   $_SESSION['old'] = [
-   'nim'   => $nim,
+    'nim'   => $nim,
     'nama'  => $nama,
-    'Tempat lahir' => $tempat,
-    'Tanggal lahir' => $tanggal,
+    'tempat' => $tempat,
+    'tanggal' => $tanggal,
     'Hobi'   => $hobi,
-    'Pasangan'   => $pasangan,
-    'Pekerjaan'   => $pekerjaan,
-    'Nama Orang Tua'   => $ortu,
-    'Nama kakak'   => $kakak,
-    'Nama Adik'   => $adik,
+    'pasangan'   => $pasangan,
+    'pekerjaan'   => $pekerjaan,
+    'ortu'   => $ortu,
+    'kakak'   => $kakak,
+    'adik'   => $adik,
   ];
   $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';
   redirect_ke('index.php');
