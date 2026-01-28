@@ -6,7 +6,7 @@
   #cek method form, hanya izinkan POST
   if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['flash_error'] = 'Akses tidak valid.';
-    redirect_ke('read.php');
+    redirect_ke('read copy.php');
   }
 
   #validasi cid wajib angka dan > 0
@@ -20,10 +20,16 @@
   }
 
   #ambil dan bersihkan (sanitasi) nilai dari form
-  $nama  = bersihkan($_POST['txtNamaEd']  ?? '');
-  $email = bersihkan($_POST['txtEmailEd'] ?? '');
-  $pesan = bersihkan($_POST['txtPesanEd'] ?? '');
-  $captcha = bersihkan($_POST['txtCaptcha'] ?? '');
+$kode      = bersihkan($_POST['txtKode']  ?? '');
+$nama      = bersihkan($_POST['txtnama'] ?? '');
+$alamat    = bersihkan($_POST['txtalamat'] ?? '');
+$tanggal   = bersihkan($_POST['txttanggal'] ?? '');
+$JJA       = bersihkan($_POST['txtJJA'] ?? '');
+$prodi     = bersihkan($_POST['txtprodi'] ?? '');
+$noHP      = bersihkan($_POST['txtnoHP'] ?? '');
+$pasangan  = bersihkan($_POST['txtpasangan'] ?? '');
+$anak      = bersihkan($_POST['txtanak'] ?? '');
+$bidang    = bersihkan($_POST['txtbidang'] ?? '');
 
   #Validasi sederhana
   $errors = []; #ini array untuk menampung semua error yang ada
