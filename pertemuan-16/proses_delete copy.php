@@ -10,7 +10,7 @@
 
   if (!$cid) {
     $_SESSION['flash_error'] = 'CID Tidak Valid.';
-    redirect_ke('read.php');
+    redirect_ke('read copy.php');
   }
 
   /*
